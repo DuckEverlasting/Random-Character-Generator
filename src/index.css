@@ -35,6 +35,9 @@ footer {
   height: 93%;
   width: 25%;
   border: 2px solid orange;
+  background-color: #ECECEC;
+  color: #131313;
+  font-family: 'Roboto', sans-serif;
 }
 
 main {
