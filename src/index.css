@@ -18,11 +18,12 @@ code {
 }
 header {
   height: 7%;
-  border: 2px solid red;
+  border: 1px solid red;
+  text-align: center;
 }
 footer {
   height: 5%;
-  border: 2px solid red;
+  border: 1px solid red;
 }
 
 .wrapper {
@@ -34,26 +35,38 @@ footer {
 .left-column {
   height: 93%;
   width: 25%;
-  border: 2px solid orange;
+  border: 1px solid orange;
 }
 
 main {
   height: 93%;
   width: 75%;
-  border: 2px solid purple;
+  border: 1px solid purple;
+}
+
+.monster-info{
+  border: 1px solid blue;
+  height: 70%;
+  overflow:auto;
+}
+
+.battlefield{
+  border: 1px solid green;
+  height: 30%;
 }
 
 .form {
   height: 70%;
-  border: 2px solid red;
+  border: 1px solid red;
 
 }
 
 .player-info-input {
   height: 30%;
-  border: 2px solid red;
+  border: 1px solid red;
 
 }
+
 /*
 dragon-red: #CF291D
 cement: #ECECEC
