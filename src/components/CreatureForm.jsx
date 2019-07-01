@@ -16,13 +16,22 @@ class CreatureForm extends Component {
                 type: [],
                 terrain: "x",
                 alignment: []
+            },
+            player: {
+                name: "",
+                level: 0
             }
         }
     }
 
     onSubmitHandler = event => {
         event.preventDefault();
-        console.log(this.state.info);
+        console.log(`Encounter State: 
+        EL: ${this.state.info.encounterLevel}, 
+        NE: ${this.state.info.numberEncounter}, 
+        TYPE: ${this.state.info.type}, 
+        Terrain: ${this.state.info.terrain}, 
+        Alignment: ${this.state.info.alignment}`);
 
     }
 
@@ -69,6 +78,20 @@ class CreatureForm extends Component {
                 type: type
             }
         })
+    }
+
+    onChangePlayer = event => {
+        this.setState({
+            player: {
+                ...this.state.player,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+
+    addPlayer = event => {
+        event.preventDefault();
+        console.log(`AddPlayer: Player: ${this.state.player.name}, Level: ${this.state.player.level}`)
     }
 
     render() {
@@ -145,7 +168,6 @@ class CreatureForm extends Component {
                         <option value="urban">Urban</option>
                     </select>
 
-                    Alignment
                     <select
                         multiple={true}
                         value={this.state.info.alignment}
@@ -162,9 +184,34 @@ class CreatureForm extends Component {
                         <option value="Neutral Evil">Neutral Evil</option>
                         <option value="Chaotic Evil">Chaotic Evil</option>
                     </select>
-
                     <button type="submit">Generate - View State in Console</button>
                 </form>
+
+                <h1>Add Players</h1>
+                <form onSubmit={this.addPlayer} autoComplete='off'>
+
+                    Player Name:
+                    <input
+                        type="text"
+                        name="name"
+                        value={this.state.player.name}
+                        onChange={this.onChangePlayer}
+                    />
+
+                    
+                    Player Level:
+                    <input
+                        type="number"
+                        min="1"
+                        max="20"
+                        name="level"
+                        value={this.state.player.level}
+                        onChange={this.onChangePlayer}
+                    />
+
+                    <button type='submit'>Add Player</button>
+                </form>
+
             </div>
         );
     }
