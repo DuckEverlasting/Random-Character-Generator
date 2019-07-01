@@ -22,6 +22,7 @@ class CreatureForm extends Component {
 
     onSubmitHandler = event => {
         event.preventDefault();
+        console.log(this.state.info);
 
     }
 
@@ -71,11 +72,12 @@ class CreatureForm extends Component {
     }
 
     render() {
-        console.log(this.state.info);
-
         return (
             <div className='form-container'>
-            {this.state.error && this.state.message}
+                <h1>Generate Random Creature</h1>
+                <p className='instructions'>For Windows: Hold down the <strong>Control button + Click</strong> to select multiple option. 
+                For Mac: Hold down the <strong>Command button + Click</strong> to select multiple options</p>
+
                 <form onSubmit={this.onSubmitHandler} autoComplete='off'>
 
                     Encounter Level:
@@ -161,7 +163,7 @@ class CreatureForm extends Component {
                         <option value="Chaotic Evil">Chaotic Evil</option>
                     </select>
 
-                    <button type="submit">Generate</button>
+                    <button type="submit">Generate - View State in Console</button>
                 </form>
             </div>
         );

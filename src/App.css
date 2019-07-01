@@ -1,0 +1,26 @@
+.form-container {
+    max-width:1000px;
+    height:1200px;
+}
+
+.form-container form {
+    display:flex;
+    flex-direction: column;
+    padding: 1%;
+    margin:1%;
+}
+
+.form-container form input,select {
+    margin:1% 0;
+}
+
+.form-container .instructions {
+    font-size: 0.75rem;
+    padding: 0 2%;
+}
+
+.form-container h1 {
+    text-align:center;
+    font-size:1.5rem;
+}
+
