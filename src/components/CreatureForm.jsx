@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 // Encounter Level - number input
 // Number of Monsters - number input
-// Type selector - drop down - select one
-// alignment selector - select multiple
+// Type selector - select multiple as well
 // terrain selector - select one
+// alignment selector - select multiple
 
 class CreatureForm extends Component {
     constructor() {
@@ -13,11 +13,10 @@ class CreatureForm extends Component {
             info: {
                 encounterLevel: 0,
                 numberEncounter: 0,
-                type: "x",
-
-
+                type: [],
+                terrain: "x",
+                alignment: []
             }
-
         }
     }
 
@@ -35,11 +34,49 @@ class CreatureForm extends Component {
         })
     }
 
+    handleAlignment = event => {
+
+        var options = event.target.options;
+        var alignment = [];
+        for (var i = 0, l = options.length; i < l; i++) {
+            if (options[i].selected) {
+                alignment.push(options[i].value);
+            }
+        }
+
+        this.setState({
+            info: {
+                ...this.state.info,
+                alignment: alignment
+            }
+        })
+    }
+
+    handleType = event => {
+
+        var options = event.target.options;
+        var type = [];
+        for (var i = 0, l = options.length; i < l; i++) {
+            if (options[i].selected) {
+                type.push(options[i].value);
+            }
+        }
+
+        this.setState({
+            info: {
+                ...this.state.info,
+                type: type
+            }
+        })
+    }
 
     render() {
+        console.log(this.state.info);
+
         return (
-            <div className='form-container' autocomplete='off'>
-                <form onSubmit={this.onSubmitHandler}>
+            <div className='form-container'>
+            {this.state.error && this.state.message}
+                <form onSubmit={this.onSubmitHandler} autoComplete='off'>
 
                     Encounter Level:
                     <input
@@ -54,6 +91,8 @@ class CreatureForm extends Component {
                     Number of Encounters:
                     <input
                         type="number"
+                        min="1"
+                        max="20"
                         name="numberEncounter"
                         value={this.state.info.numberEncounter}
                         onChange={this.onChangeHandler}
@@ -61,13 +100,11 @@ class CreatureForm extends Component {
 
                     Encounter Type:
                     <select
-                        name="type"
-                        placeholder="x"
+                        multiple={true}
                         value={this.state.info.type}
-                        onChange={this.onChangeHandler}
-                        >
+                        onChange={this.handleType}
+                    >
 
-                        <option value="x" hidden>Choose</option>
                         <option value="aberration">Aberration</option>
                         <option value="beast">Beast</option>
                         <option value="celestial">Celestial</option>
@@ -84,8 +121,47 @@ class CreatureForm extends Component {
                         <option value="undead">Undead</option>
                     </select>
 
+                    Terrain or Habitat of Encounter:
+                    <select
+                        name="terrain"
+                        placeholder="x"
+                        value={this.state.info.terrain}
+                        onChange={this.onChangeHandler}
+                    >
 
+                        <option value="x" hidden>Terrain</option>
+                        <option value="arctic">Arctic</option>
+                        <option value="coastal">Coastal</option>
+                        <option value="desert">Desert</option>
+                        <option value="forest">Forest</option>
+                        <option value="grassland">Grassland</option>
+                        <option value="hill">Hill</option>
+                        <option value="mountain">Mountain</option>
+                        <option value="swamp">Swamp</option>
+                        <option value="underdark">Underdark</option>
+                        <option value="underwater">Underwater</option>
+                        <option value="urban">Urban</option>
+                    </select>
 
+                    Alignment
+                    <select
+                        multiple={true}
+                        value={this.state.info.alignment}
+                        onChange={this.handleAlignment}
+                    >
+
+                        <option value="Lawful Good">Lawful Good</option>
+                        <option value="Neutral Good">Neutral Good</option>
+                        <option value="Chaotic Good">Chaotic Good</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Chaotic Neutral">Chaotic Neutral</option>
+                        <option value="Lawful Evil">Lawful Evil</option>
+                        <option value="Neutral Evil">Neutral Evil</option>
+                        <option value="Chaotic Evil">Chaotic Evil</option>
+                    </select>
+
+                    <button type="submit">Generate</button>
                 </form>
             </div>
         );
