@@ -8,7 +8,7 @@ import SectionView from './SectionView'
 
 function MonsterViewer() {
 
-    //const monster=useSelector(state=>state.viewedCreature)
+    //const monster=useSelector(state=>state.selected)
     const monster = dummy;
 
     if(monster){
