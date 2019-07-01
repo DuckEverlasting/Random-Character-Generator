@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {dataRecieved} from '../actions'
 import '../styles/Initiaitve.css'
+import Token from './MonsterToken'
+import {ButtonSection,PrevButton,NextButton} from '../styles/Initiative'
 
 function InitiaitiveField() {
 
@@ -23,16 +25,16 @@ function InitiaitiveField() {
             setList(temp)
             dispatch(dataRecieved())
         }
-    })
+    },[formUpdated,dispatch,monsters,players])
 
-    next=e=>{
+    const next=e=>{
         let temp=list.map(i=>i)
         let tempChar=temp.shift()
         temp.push(tempChar)
         setList(temp)
     }
 
-    last=e=>{
+    const last=e=>{
         let temp=list.map(i=>i)
         let tempChar=temp.pop()
         temp.unshift(tempChar)
@@ -41,9 +43,15 @@ function InitiaitiveField() {
 
     return (
         <section>
-            {list.map(token=>{
-                <Token {...token}/>
-            })}
+            <section>
+                {list.map(token=>{
+                    return <Token {...token}/>
+                })}
+            </section>
+            <ButtonSection>
+                <PrevButton onClick={last}>Last Initiative</PrevButton>
+                <NextButton onClick={next}>Next Initiative</NextButton>
+            </ButtonSection>
         </section>
     )
 }
