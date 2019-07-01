@@ -3,6 +3,7 @@ dependencies:
   axios: 0.19.0
   react: 16.8.6
   react-dom: 16.8.6
+  react-icons: 3.7.0
   react-redux: 7.1.0
   react-scripts: 3.0.1
   redux: 4.0.1
@@ -9000,6 +9001,12 @@ packages:
       react: ^16.3.0
     resolution:
       integrity: sha512-+hCNqfy7o9wvO6UgjqFmBzARJS7qrNoda0VqzvOuioEpoEXKutiKuv92dSz6kP7rYLmyHPyYNLesi5t/aH1gfw==
+  /react-icons/3.7.0:
+    dependencies:
+      camelcase: 5.3.1
+    dev: false
+    resolution:
+      integrity: sha512-7MyPwjIhuyW0D2N3s4DEd0hGPGFf0sK+IIRKhc1FvSpZNVmnUoGvHbmAwzGJU+3my+fvihVWgwU5SDtlAri56Q==
   /react-is/16.8.6:
     dev: false
     resolution:
@@ -11278,6 +11285,7 @@ specifiers:
   axios: ^0.19.0
   react: ^16.8.6
   react-dom: ^16.8.6
+  react-icons: ^3.7.0
   react-redux: ^7.1.0
   react-scripts: 3.0.1
   redux: ^4.0.1

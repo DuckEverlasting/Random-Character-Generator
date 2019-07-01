@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Initiative from './components/Initiative'
+import View from './components/MonsterViewer'
 
 function App() {
   return (
     <div className="App">
       <header>
-        <Initiative />
+        <View/>
       </header>
     </div>
   );
