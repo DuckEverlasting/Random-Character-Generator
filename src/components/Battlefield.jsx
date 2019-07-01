@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import MonsterToken from "./MonsterToken";
 
@@ -75,4 +76,12 @@ background-size: cover;
 background-position: center;
 width: 100%`;
 
-export default Battlefield;
+//redux
+const mapStateToProps = state => {
+  return {
+    monsters: state.moonsters,
+    players: state.players
+  };
+};
+
+export default connect(mapStateToProps)(Battlefield);

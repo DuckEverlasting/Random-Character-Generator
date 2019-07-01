@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, IconButton } from "@material-ui/core";
 import styled from "styled-components";
+import { connect } from "react-redux";
 import { toggleMonsterDeath } from "../actions";
 
 class MonsterToken extends React.Component {
@@ -16,12 +17,17 @@ class MonsterToken extends React.Component {
     console.log("dead");
   };
 
+  selectMonster = e => {
+    e.preventDefault();
+    console.log("selected");
+  };
+
   render() {
     if (!this.props.monster) {
       return null;
     }
     return (
-      <CreatureToken>
+      <CreatureToken onClick={this.selectMonster}>
         <MonsterInfo>
           <Typography>{this.props.monster.name}</Typography>
           <StatHolder>
@@ -76,4 +82,15 @@ const Stat = styled.div`
   align-items: center;
 `;
 
-export default MonsterToken;
+//redux
+const mapStateToProps = state => {
+  return {
+    monsters: state.moonsters,
+    players: state.players
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleMonsterDeath }
+)(MonsterToken);
