@@ -5,9 +5,59 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+header {
+  height: 7%;
+  border: 2px solid red;
+}
+footer {
+  height: 5%;
+  border: 2px solid red;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  height: 93%;
+  width: 25%;
+  border: 2px solid orange;
+}
+
+main {
+  height: 93%;
+  width: 75%;
+  border: 2px solid purple;
+}
+
+.form {
+  height: 70%;
+  border: 2px solid red;
+
+}
+
+.player-info-input {
+  height: 30%;
+  border: 2px solid red;
+
+}
+/*
+dragon-red: #CF291D
+cement: #ECECEC
+dungeon: #BFBFBF
+black: #131313
+blood: #B50717
+*/
