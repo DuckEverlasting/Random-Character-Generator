@@ -3,14 +3,42 @@ import styled from "styled-components";
 import MonsterToken from "./MonsterToken";
 
 class Battlefield extends React.Component {
+  state = {
+    monster: [
+      {
+        name: "Joshua, Lord of Light",
+        hit_points: 15,
+        initiative: 6,
+        location: "Grasslands",
+        id: 1,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 2,
+        is_Alive: false
+      }
+    ]
+  };
   render() {
     return (
       <Battlegrounds>
         <Field>
-          <MonsterToken monster={this.props.monster} />
+          {this.state.monster
+            .filter(monster => monster.is_Alive === true)
+            .map(monster => (
+              <MonsterToken key={monster.id} monster={monster} />
+            ))}
         </Field>
         <ShadowRealm>
-          <MonsterToken monster={this.props.monster} />
+          {this.state.monster
+            .filter(monster => monster.is_Alive === false)
+            .map(monster => (
+              <MonsterToken key={monster.id} monster={monster} />
+            ))}
         </ShadowRealm>
       </Battlegrounds>
     );
@@ -20,9 +48,9 @@ class Battlefield extends React.Component {
 const Battlegrounds = styled.div`
 display: flex;
 flex-direction: column;
-height: 75vh
+height: 77vh
 width: 50%;
-padding: 1%;`;
+`;
 
 const Field = styled.div`
   display: flex;
@@ -30,7 +58,7 @@ const Field = styled.div`
   flex-flow: wrap;
   align-items: center;
   justify-content: space-around;
-  height: 66%;
+  height: 67%;
   background: url(https://cdn.pixabay.com/photo/2016/11/29/02/31/grass-1866870_1280.jpg);
   background-repeat: no-repeat;
   background-positon: center;
