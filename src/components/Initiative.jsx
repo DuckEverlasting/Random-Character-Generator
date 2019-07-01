@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {dataRecieved} from '../actions'
+import '../styles/Initiaitve.css'
 
 function InitiaitiveField() {
 
@@ -14,7 +15,10 @@ function InitiaitiveField() {
 
     useEffect(()=>{
         if(formUpdated){
-            let temp=monsters.concat(players)
+            let temp=monsters.map(i=>({...i,
+                initiative:Math.random()*20+1 +(Math.floor((i.dexterity-10)/2))
+            })).concat(players)
+
             temp.sort((a,b)=>a.inititative-b.inititative)
             setList(temp)
             dispatch(dataRecieved())
