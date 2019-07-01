@@ -75,8 +75,8 @@ class CreatureForm extends Component {
         return (
             <div className='form-container'>
                 <h1>Generate Random Creature</h1>
-                <p className='instructions'>For Windows: Hold down the <strong>Control button + Click</strong> to select multiple option. 
-                For Mac: Hold down the <strong>Command button + Click</strong> to select multiple options</p>
+                <p className='instructions'>For Windows: Hold down the <strong>Control button + Click</strong> to select multiple option.
+                For Mac: Hold down the <strong>Command button + Click</strong> to select multiple options.</p>
 
                 <form onSubmit={this.onSubmitHandler} autoComplete='off'>
 
@@ -151,7 +151,7 @@ class CreatureForm extends Component {
                         value={this.state.info.alignment}
                         onChange={this.handleAlignment}
                     >
-
+                        <option value="Unaligned">Unaligned</option>
                         <option value="Lawful Good">Lawful Good</option>
                         <option value="Neutral Good">Neutral Good</option>
                         <option value="Chaotic Good">Chaotic Good</option>
