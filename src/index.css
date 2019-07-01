@@ -23,6 +23,10 @@ code {
   font-family: 'MedievalSharp', cursive;
   font-size: 2rem;
   text-align: center;
+  margin: 0 auto;
+  width: 80%;
+
+
 }
 
 .about-body button {
@@ -35,10 +39,12 @@ code {
   font-family: 'MedievalSharp', cursive;
   font-style: normal;
   font-weight: bold;
+
 }
 
 .about-body button:hover {
   background-color: black;
+
 }
 
 .logo {
