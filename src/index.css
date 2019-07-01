@@ -16,51 +16,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-header {
-  height: 7%;
-  border: 2px solid red;
-}
-footer {
-  height: 5%;
-  border: 2px solid red;
+
+.about-body {
+  background: #202020;
+  color: white;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.wrapper {
-  height: 100vh;
+.about-body button {
+  background-color: #CF291D;
+  color: white;
+  border: none;
+  margin: 2rem;
+  padding: 1rem;
+  width: 10rem;
+  font-family: 'MedievalSharp', cursive;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.about-body button:hover {
+  background-color: black;
+}
+
+.logo {
+  width: 10rem;
+}
+
+
+.pic-of-us {
+  width: 264px;
+  height: 224px;
+}
+
+.all-people {
   display: flex;
-  flex-direction: row;
-}
-
-.left-column {
-  height: 93%;
-  width: 25%;
-  border: 2px solid orange;
-  background-color: #ECECEC;
-  color: #131313;
-  font-family: 'Roboto', sans-serif;
-}
-
-main {
-  height: 93%;
-  width: 75%;
-  border: 2px solid purple;
-}
-
-.form {
-  height: 70%;
-  border: 2px solid red;
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
 
-.player-info-input {
-  height: 30%;
-  border: 2px solid red;
-
+.people {
+  padding: 1rem;
 }
+
+.img-container h4 {
+  text-align: center;
+}
+
 /*
 dragon-red: #CF291D
 cement: #ECECEC
 dungeon: #BFBFBF
 black: #131313
 blood: #B50717
+shadow:  #202020;
 */
