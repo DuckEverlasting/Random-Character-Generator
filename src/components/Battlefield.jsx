@@ -398,10 +398,10 @@ class Battlefield extends React.Component {
             backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
-          <Field monsters={this.props.monsters} />
+          <Field monsters={this.state.list} />
         </FieldBox>
         <ShadowRealmBox>
-          <ShadowRealm monster={this.props.monsters} />
+          <ShadowRealm monster={this.state.list} />
         </ShadowRealmBox>
       </Battlegrounds>
     );
