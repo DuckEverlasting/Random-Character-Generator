@@ -361,7 +361,6 @@ class Battlefield extends React.Component {
     let temp=this.state.list.map(i=>i)
     let tempChar=temp.shift()
     temp.push(tempChar)
-    console.log(temp);
     this.setState({list:temp})
   }
 
