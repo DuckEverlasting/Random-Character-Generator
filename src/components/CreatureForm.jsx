@@ -93,10 +93,10 @@ class CreatureForm extends Component {
     render() {
         return (
             <div className='form-container'>
-                <h1>Generate Random Encounter</h1>
+                <h1 className='title'>Generate Random Encounter</h1>
                 {//<p className='instructions'>For Windows: Hold down the <strong>Control button + Click</strong> to select multiple option.
                 //For Mac: Hold down the <strong>Command button + Click</strong> to select multiple options.</p>
-        }       <div className='form-wrapper'>
+        }       
                 <form onSubmit={this.onSubmitHandler} autoComplete='off'>
 
                     <h3>Encounter Level:</h3>
@@ -218,7 +218,7 @@ class CreatureForm extends Component {
 
                     <button type='submit'>Add Player</button>
                 </form>
-                </div>
+    
 
             </div>
         );
