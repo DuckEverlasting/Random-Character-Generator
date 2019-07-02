@@ -367,7 +367,7 @@ const FieldBox = styled.div`
   align-items: center;
   justify-content: space-around;
   height: 67%;
-  overflow: scroll;
+  overflow-y: scroll;
   background-repeat: no-repeat;
   background-positon: center;
 `;
@@ -378,7 +378,7 @@ display: flex;
 flex-direction: row;
 align-items: center
 justify-content: space-around;
-overflow: scroll;
+overflow-x: scroll;
 background: url(https://cdn.pixabay.com/photo/2018/01/30/13/08/old-3118750_1280.jpg);
 background-repeat: no-repeat;
 background-size: cover;
