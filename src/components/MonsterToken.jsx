@@ -53,7 +53,9 @@ class MonsterToken extends React.Component {
           <WordStat>
             <Typography style={{ fontWeight: "bold" }}>Speed:</Typography>
             <Typography>
-              {this.props.monster.speed ? this.props.monster.speed : "N/A"}
+              {this.props.monster.speed
+                ? JSON.stringify(this.props.monster.speed)
+                : "N/A"}
             </Typography>
           </WordStat>
           <WordStat>
