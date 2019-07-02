@@ -83,7 +83,7 @@ class Battlefield extends React.Component {
           <Field monsters={this.state.list} />
         </FieldBox>
         <ShadowRealmBox>
-          <ShadowRealm monster={this.props.monsters} />
+          <ShadowRealm monster={this.state.list} />
         </ShadowRealmBox>
       </Battlegrounds>
     );
