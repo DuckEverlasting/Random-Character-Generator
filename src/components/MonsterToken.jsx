@@ -29,33 +29,68 @@ class MonsterToken extends React.Component {
     return (
       <CreatureToken onClick={this.selectMonster}>
         <MonsterInfo>
-          <Typography>{this.props.monster.name}</Typography>
+          <NameHolder>
+            <Typography>{this.props.monster.name}</Typography>
+            <IconButton onClick={this.monsterDeath}>
+              {this.props.monster.is_Alive === true ? (
+                <i className="fas fa-skull-crossbones" />
+              ) : (
+                <i className="fas fa-undo" />
+              )}
+            </IconButton>
+          </NameHolder>
           <StatHolder>
-            <Stat>
+            <NumberStat>
               <i className="fas fa-heart" />
               <Typography>{this.props.monster.hit_points}</Typography>
-            </Stat>
-            <Stat>
+            </NumberStat>
+            <NumberStat>
               <i className="fas fa-bolt" />
               <Typography>{this.props.monster.initiative}</Typography>
-            </Stat>
+            </NumberStat>
+            <NumberStat>
+              <i class="fas fa-shield-alt" />
+              <Typography>{this.props.monster.armor_class}</Typography>
+            </NumberStat>
           </StatHolder>
-          <IconButton onClick={this.monsterDeath}>
-            {this.props.monster.is_Alive === true ? (
-              <i className="fas fa-skull-crossbones" />
-            ) : (
-              <i className="fas fa-undo" />
-            )}
-          </IconButton>
+          <WordStat>
+            <Typography style={{ fontWeight: "bold" }}>Speed:</Typography>
+            <Typography>
+              {this.props.monster.speed ? this.props.monster.speed : "N/A"}
+            </Typography>
+          </WordStat>
+          <WordStat>
+            <Typography style={{ fontWeight: "bold" }}>Resistances:</Typography>
+            <Typography>
+              {this.props.monster.resistances
+                ? this.props.monster.resistances
+                : "N/A"}
+            </Typography>
+          </WordStat>
+          <WordStat>
+            <Typography style={{ fontWeight: "bold" }}>Immunities:</Typography>
+            <Typography>
+              {this.props.monster.immunities
+                ? this.props.monster.immunities
+                : "N/A"}
+            </Typography>
+          </WordStat>
         </MonsterInfo>
       </CreatureToken>
     );
   }
 }
 
+const NameHolder = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const CreatureToken = styled(Card)({
-  width: "12%",
-  height: "25%",
+  width: "20%",
+  height: "30%",
   padding: "1%",
   textAlign: "center",
   margin: "2px"
@@ -71,14 +106,22 @@ const MonsterInfo = styled(CardContent)({
 
 const StatHolder = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   width: 100%;
 `;
 
-const Stat = styled.div`
+const NumberStat = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+`;
+
+const WordStat = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;
