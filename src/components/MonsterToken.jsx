@@ -58,7 +58,7 @@ const CreatureToken = styled(Card)({
   height: "25%",
   padding: "1%",
   textAlign: "center",
-  margin: "1px"
+  margin: "2px"
 });
 
 const MonsterInfo = styled(CardContent)({
