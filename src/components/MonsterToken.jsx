@@ -55,8 +55,10 @@ class MonsterToken extends React.Component {
 
 const CreatureToken = styled(Card)({
   width: "12%",
-  minHeight: "25%",
-  padding: "1%"
+  height: "25%",
+  padding: "1%",
+  textAlign: "center",
+  margin: "1px"
 });
 
 const MonsterInfo = styled(CardContent)({
@@ -64,8 +66,7 @@ const MonsterInfo = styled(CardContent)({
   flexDirection: "column",
   justifyContent: "space-between",
   padding: "0 !important",
-  height: "100%",
-  minHeight: "111.4px"
+  minHeight: "100%"
 });
 
 const StatHolder = styled.div`
