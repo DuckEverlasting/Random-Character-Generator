@@ -18,7 +18,6 @@ class Battlefield extends React.Component {
   }
 
   componentDidUpdate(){
-    console.log('yo');
     if (this.props.formUpdated) {
       let temp = this.props.monsters.map((i, index) => ({
         ...i,
@@ -38,11 +37,9 @@ class Battlefield extends React.Component {
       temp = temp.sort((a, b) => {
         return b.initiative - a.initiative;
       });
-      console.log(temp);
       this.setState({
         list: temp
-      });
-
+      },this.props.dataRecieved);
     }
   }
 
