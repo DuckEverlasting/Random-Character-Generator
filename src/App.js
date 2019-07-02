@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import View from './components/Initiative'
+import View from './components/Battlefield'
 
 function App() {
   return (
     <div className="App">
-      <header>
         <View/>
-      </header>
     </div>
   );
 }

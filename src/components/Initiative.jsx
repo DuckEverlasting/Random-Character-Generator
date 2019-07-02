@@ -26,13 +26,13 @@ function InitiaitiveField() {
         if(formUpdated){
             setFormUpdated(false)
             let temp=monsters.map(i=>({...i,
-                initiative:Math.random()*20+1 +(Math.floor((i.dexterity-10)/2)),
+                initiative:Math.floor(Math.random()*20+1 +(Math.floor((i.dexterity-10)/2))),
                 isAlive:true
             })).concat(players)
 
             temp.sort((a,b)=>a.inititative-b.inititative)
             setAll(temp)
-            setList(temp.slice(-2).concat(temp.slice(0,3)))
+            setList(temp)
             // dispatch(dataRecieved())
         }
     },[formUpdated,dispatch,monsters,players,list])
