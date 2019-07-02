@@ -2,14 +2,9 @@ import React from "react";
 import { Card, CardContent, Typography, IconButton } from "@material-ui/core";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { toggleMonsterDeath } from "../actions";
+import { toggleMonsterDeath, selectCreature } from "../actions";
 
 class MonsterToken extends React.Component {
-  selectMonster = e => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   monsterDeath = e => {
     e.preventDefault();
     e.stopPropagation();
@@ -19,7 +14,9 @@ class MonsterToken extends React.Component {
 
   selectMonster = e => {
     e.preventDefault();
+    e.stopPropagation();
     console.log("selected");
+    this.props.selectCreature(this.props.monster);
   };
 
   render() {
@@ -49,7 +46,7 @@ class MonsterToken extends React.Component {
               <Typography>{this.props.monster.initiative}</Typography>
             </NumberStat>
             <NumberStat>
-              <i class="fas fa-shield-alt" />
+              <i className="fas fa-shield-alt" />
               <Typography>{this.props.monster.armor_class}</Typography>
             </NumberStat>
           </StatHolder>
@@ -138,5 +135,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { toggleMonsterDeath }
+  { toggleMonsterDeath, selectMonster }
 )(MonsterToken);
