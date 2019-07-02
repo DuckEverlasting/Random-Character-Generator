@@ -340,7 +340,7 @@ class Battlefield extends React.Component {
   componentDidMount(){
     if(this.state.formUpdated){
       let temp=this.state.monsters.map((i,index)=>({...i,
-          initiative:Math.floor(Math.random()*20+1 +(Math.floor((i.dexterity-10)/2))),
+          initiative:Math.floor(Math.random()*20+1 +(Math.floor(( (i.dexterity || 10) -10)/2))),
           is_Alive:true,
           id:index
       }))
