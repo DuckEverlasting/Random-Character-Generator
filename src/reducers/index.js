@@ -5,19 +5,20 @@ import {
   DATA_RECIEVED,
   SUBMIT_PLAYER,
   TOGGLE_MONSTER_DEATH,
-  TOGGLE_PLAYER_DEATH
+  TOGGLE_PLAYER_DEATH,
+  SELECT_CREATURE,
+  END_ENCOUNTER
 } from "../actions";
 
 const initialState = {
   formUpdated: false,
   formPending: false,
-  formError: "",
+  formError: [],
   terrain: "",
   monsters: [],
-  players: []
+  players: [],
+  selected: undefined,
 };
-
-
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -26,14 +27,14 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         formPending: true,
         formUpdated: false,
-        formError: false
+        formError: []
       };
     case SUBMIT_FORM_SUCCESS:
       return {
         ...state,
         formPending: false,
         formUpdated: true,
-        formError: false,
+        formError: [],
         monsters: action.payload.monsters,
         terrain: action.payload.terrain
       };
@@ -42,7 +43,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         formPending: false,
         formUpdated: false,
-        formError: action.payload,
+        formError: [...state.formError, action.payload],
       };
     case DATA_RECIEVED:
       return {
@@ -84,6 +85,17 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         players: newPlayers
+      };
+    case SELECT_CREATURE:
+      return {
+        ...state,
+        selected: action.payload,
+        formVisible: false
+      };
+    case END_ENCOUNTER:
+      return {
+        ...state,
+        selected: undefined
       };
     default:
       return state;

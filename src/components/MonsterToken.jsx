@@ -1,39 +1,98 @@
 import React from "react";
 import { Card, CardContent, Typography, IconButton } from "@material-ui/core";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { toggleMonsterDeath, selectCreature } from "../actions";
 
 class MonsterToken extends React.Component {
+  monsterDeath = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.toggleMonsterDeath(this.props.monster.id);
+    console.log("dead");
+  };
+
+  selectMonster = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("selected");
+    this.props.selectCreature(this.props.monster);
+  };
+
   render() {
     if (!this.props.monster) {
       return null;
     }
     return (
-      <CreatureToken>
+      <CreatureToken onClick={this.selectMonster}>
         <MonsterInfo>
-          <Typography>{this.props.monster.name}</Typography>
+          <NameHolder>
+            <Typography>{this.props.monster.name}</Typography>
+            <IconButton onClick={this.monsterDeath}>
+              {this.props.monster.is_Alive === true ? (
+                <i className="fas fa-skull-crossbones" />
+              ) : (
+                <i className="fas fa-undo" />
+              )}
+            </IconButton>
+          </NameHolder>
           <StatHolder>
-            <Stat>
-              <i class="fas fa-heart" />
+            <NumberStat>
+              <i className="fas fa-heart" />
               <Typography>{this.props.monster.hit_points}</Typography>
-            </Stat>
-            <Stat>
-              <i class="fas fa-bolt" />
+            </NumberStat>
+            <NumberStat>
+              <i className="fas fa-bolt" />
               <Typography>{this.props.monster.initiative}</Typography>
-            </Stat>
+            </NumberStat>
+            <NumberStat>
+              <i className="fas fa-shield-alt" />
+              <Typography>{this.props.monster.armor_class}</Typography>
+            </NumberStat>
           </StatHolder>
-          <IconButton>
-            <i class="fas fa-skull-crossbones" />
-          </IconButton>
+          <WordStat>
+            <Typography style={{ fontWeight: "bold" }}>Speed:</Typography>
+            <Typography>
+              {this.props.monster.speed ? this.props.monster.speed : "N/A"}
+            </Typography>
+          </WordStat>
+          <WordStat>
+            <Typography style={{ fontWeight: "bold" }}>Resistances:</Typography>
+            <Typography>
+              {this.props.monster.resistances
+                ? this.props.monster.resistances
+                : "N/A"}
+            </Typography>
+          </WordStat>
+          <WordStat>
+            <Typography style={{ fontWeight: "bold" }}>Immunities:</Typography>
+            <Typography>
+              {this.props.monster.immunities
+                ? this.props.monster.immunities
+                : "N/A"}
+            </Typography>
+          </WordStat>
         </MonsterInfo>
       </CreatureToken>
     );
   }
 }
 
+const NameHolder = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const CreatureToken = styled(Card)({
-  width: "10%",
-  height: "30%",
-  padding: "1%"
+  width: "20%",
+  minWidth: "20%",
+  height: "25%",
+  padding: "1%",
+  textAlign: "center",
+  margin: "2px",
+  border: "1px solid black"
 });
 
 const MonsterInfo = styled(CardContent)({
@@ -41,22 +100,40 @@ const MonsterInfo = styled(CardContent)({
   flexDirection: "column",
   justifyContent: "space-between",
   padding: "0 !important",
-  height: "100%"
+  minHeight: "100%"
 });
 
 const StatHolder = styled.div`
   display: flex;
-  flex-direction: column;
-  padding: 1%;
+  flex-direction: row;
   justify-content: space-around;
   width: 100%;
 `;
 
-const Stat = styled.div`
+const NumberStat = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+`;
+
+const WordStat = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;
 
-export default MonsterToken;
+//redux
+const mapStateToProps = state => {
+  return {
+    monsters: state.moonsters,
+    players: state.players
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleMonsterDeath, selectCreature }
+)(MonsterToken);

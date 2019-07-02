@@ -16,6 +16,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 header {
   height: 7%;
   border: 1px solid red;
@@ -24,13 +25,39 @@ header {
 footer {
   height: 5%;
   border: 1px solid red;
+
+
+.about-body {
+  background: #202020;
+  color: white;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+
+
 }
 
-.wrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+.about-body button {
+  background-color: #CF291D;
+  color: white;
+  border: none;
+  margin: 2rem;
+  padding: 1rem;
+  width: 10rem;
+  font-family: 'MedievalSharp', cursive;
+  font-style: normal;
+  font-weight: bold;
+
+
 }
+
+.about-body button:hover {
+  background-color: black;
+
+}
+
 
 .left-column {
   height: 93%;
@@ -64,7 +91,30 @@ main {
 .player-info-input {
   height: 30%;
   border: 1px solid red;
+=======
+.logo {
+  width: 10rem;
+}
 
+
+.pic-of-us {
+  width: 264px;
+}
+
+.all-people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.people {
+  padding: 1rem;
+}
+
+
+.img-container h4 {
+  text-align: center;
 }
 
 /*
@@ -73,4 +123,5 @@ cement: #ECECEC
 dungeon: #BFBFBF
 black: #131313
 blood: #B50717
+shadow:  #202020;
 */
