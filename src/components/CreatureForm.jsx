@@ -19,7 +19,8 @@ class CreatureForm extends Component {
             },
             player: {
                 name: "",
-                level: 0
+                level: 0,
+                initiative: 0
             }
         }
     }
@@ -91,7 +92,7 @@ class CreatureForm extends Component {
 
     addPlayer = event => {
         event.preventDefault();
-        console.log(`AddPlayer: Player: ${this.state.player.name}, Level: ${this.state.player.level}`)
+        console.log(`AddPlayer: Player: ${this.state.player.name}, Level: ${this.state.player.level}, Initiative: ${this.state.player.initiative}`)
     }
 
     render() {
@@ -206,6 +207,15 @@ class CreatureForm extends Component {
                         max="20"
                         name="level"
                         value={this.state.player.level}
+                        onChange={this.onChangePlayer}
+                    />
+
+                    Initiative:
+                    <input
+                        type="number"
+                        min="1"
+                        name="initiative"
+                        value={this.state.player.initiative}
                         onChange={this.onChangePlayer}
                     />
 
