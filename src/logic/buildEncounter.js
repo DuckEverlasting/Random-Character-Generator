@@ -23,7 +23,7 @@ export default function (encounterLevel, numberEncounter, filteredByAlignment) {
     }
 
     let pickedCreature=tempSmall[
-      Math.floor(Math.random()*tempSmall.length+1)
+      Math.floor(Math.random()*tempSmall.length)
     ]
 
     temp.push(pickedCreature)
