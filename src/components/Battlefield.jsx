@@ -353,7 +353,11 @@ const Battlegrounds = styled.div`
 display: flex;
 flex-direction: column;
 height: 77vh
-width: 100%;
+width: 50%;
+@media (max-width: 800px) {
+      width: 100%;
+    }
+  }
 `;
 
 const FieldBox = styled.div`
