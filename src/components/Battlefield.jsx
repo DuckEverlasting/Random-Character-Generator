@@ -75,7 +75,7 @@ class Battlefield extends React.Component {
 
         <FieldBox
           style={{
-            backgroundImage: `url(/assets/${this.state.terrain}.jpg)`
+            backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
           <Field monsters={this.state.list} />
