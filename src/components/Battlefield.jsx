@@ -423,7 +423,7 @@ const Battlegrounds = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 50%;
+  width: 70%;
   @media (max-width: 800px) {
     width: 100%;
   }
