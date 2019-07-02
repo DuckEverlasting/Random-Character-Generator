@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import View from './components/MonsterViewer'
+import View from './components/Initiative'
 
 function App() {
   return (

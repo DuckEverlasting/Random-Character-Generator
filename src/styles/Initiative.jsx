@@ -22,3 +22,15 @@ export const NextButton=styled.button`
         border:2px white inset;
     }
 `
+export const InitList=styled.section`
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+`
+export const Inits=styled.section`
+    width:100%;
+    height:15vh;
+    display:flex;
+    overflow:auto;
+    
+`
