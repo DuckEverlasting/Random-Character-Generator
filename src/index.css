@@ -5,9 +5,78 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.about-body {
+  background: #202020;
+  color: white;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+
+
+}
+
+.about-body button {
+  background-color: #CF291D;
+  color: white;
+  border: none;
+  margin: 2rem;
+  padding: 1rem;
+  width: 10rem;
+  font-family: 'MedievalSharp', cursive;
+  font-style: normal;
+  font-weight: bold;
+
+}
+
+.about-body button:hover {
+  background-color: black;
+
+}
+
+.logo {
+  width: 10rem;
+}
+
+
+.pic-of-us {
+  width: 264px;
+  height: 224px;
+}
+
+.all-people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.people {
+  padding: 1rem;
+}
+
+.img-container h4 {
+  text-align: center;
+}
+
+/*
+dragon-red: #CF291D
+cement: #ECECEC
+dungeon: #BFBFBF
+black: #131313
+blood: #B50717
+shadow:  #202020;
+*/
