@@ -114,9 +114,10 @@ main {
   background-color: #202020;
   color: white;
   font-family: 'Roboto', sans-serif;
-  display: block;
-  width: 15rem;
+  width: 20rem;
   text-align: center;
+  max-height: 100vh;
+  min-width: 20rem;
 }
 
 .form-container h1 {
@@ -124,14 +125,11 @@ main {
 }
 
 .form-wrapper {
-  display: block;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
 }
-
+form {
+  display: inline-block;
+}
 form select {
   background-color: #303030;
   color: white;
@@ -159,7 +157,7 @@ form button {
   color: white;
   border: none;
   font-weight: bold;
-  width: 20rem;
+  width: 15rem;
   text-align: center;
   margin: 1rem auto;
   padding: 0.5rem;
