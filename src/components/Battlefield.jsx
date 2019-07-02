@@ -349,7 +349,9 @@ class Battlefield extends React.Component {
         id:temp.length+i
       })))
 
-      temp.sort((a,b)=>a.inititative-b.inititative)
+      temp=temp.sort((a,b)=>{
+        return b.initiative-a.initiative
+      })
       this.setState({
         list:temp,
         formUpdated:false
