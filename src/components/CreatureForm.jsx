@@ -170,6 +170,7 @@ class CreatureForm extends Component {
                         value={this.state.info.alignment}
                         onChange={this.handleAlignment}
                     >
+                        <option value="any">Any/All</option>
                         <option value="Unaligned">Unaligned</option>
                         <option value="Lawful Good">Lawful Good</option>
                         <option value="Neutral Good">Neutral Good</option>
