@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import CreatureForm from './components/CreatureForm';
 import Battlefield from "./components/Battlefield"
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <header>
       </header>
+      <CreatureForm />
       <Battlefield />
     </div>
   );
