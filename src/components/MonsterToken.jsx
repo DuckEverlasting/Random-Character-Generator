@@ -53,9 +53,27 @@ class MonsterToken extends React.Component {
           <WordStat>
             <Typography style={{ fontWeight: "bold" }}>Speed:</Typography>
             <Typography>
-              {this.props.monster.speed
-                ? JSON.stringify(this.props.monster.speed)
-                : "N/A"}
+              {this.props.monster.speed.burrow
+                ? this.props.monster.speed.burrow
+                : null}
+              {this.props.monster.speed.climb
+                ? this.props.monster.speed.climb
+                : null}
+              {this.props.monster.speed.fly
+                ? this.props.monster.speed.fly
+                : null}
+              {this.props.monster.speed.hover
+                ? this.props.monster.speed.hover
+                : null}
+              {this.props.monster.speed.notes
+                ? this.props.monster.speed.notes
+                : null}
+              {this.props.monster.speed.swim
+                ? this.props.monster.speed.swim
+                : null}
+              {this.props.monster.speed.walk
+                ? this.props.monster.speed.walk
+                : null}
             </Typography>
           </WordStat>
           <WordStat>
