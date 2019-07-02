@@ -115,8 +115,10 @@ main {
   color: white;
   font-family: 'Roboto', sans-serif;
   display: block;
-  width: 15rem;
+  width: 20rem;
   text-align: center;
+  max-height: 100vh;
+  min-width: 20rem;
 }
 
 .form-container h1 {
@@ -159,7 +161,7 @@ form button {
   color: white;
   border: none;
   font-weight: bold;
-  width: 20rem;
+  width: 15rem;
   text-align: center;
   margin: 1rem auto;
   padding: 0.5rem;

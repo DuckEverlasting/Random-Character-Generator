@@ -119,7 +119,7 @@ class CreatureForm extends Component {
                         onChange={this.onChangeHandler}
                     />
 
-                    <h3>Encounter Type:</h3>
+                    <h3>Creature Type:</h3>
                     <select
                         multiple={true}
                         value={this.state.info.type}
@@ -142,7 +142,7 @@ class CreatureForm extends Component {
                         <option value="undead">Undead</option>
                     </select>
 
-                    <h3>Terrain or Habitat of Encounter:</h3>
+                    <h3>Environment</h3>
                     <select
                         name="terrain"
                         placeholder="x"
@@ -182,7 +182,7 @@ class CreatureForm extends Component {
                         <option value="Neutral Evil">Neutral Evil</option>
                         <option value="Chaotic Evil">Chaotic Evil</option>
                     </select>
-                    <button type="submit">Generate - View State in Console</button>
+                    <button type="submit">Generate</button>
                 </form>
 
                 <h1>Add Players</h1>
