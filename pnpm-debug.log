@@ -1,0 +1,22 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": null
+  },
+  "1 error pnpm": {
+    "message": {
+      "errno": 3221225786,
+      "code": "ELIFECYCLE",
+      "pkgid": "hackathon-dnd@0.1.0",
+      "stage": "start",
+      "script": "react-scripts start",
+      "pkgname": "hackathon-dnd"
+    },
+    "err": {
+      "name": "Error",
+      "message": "hackathon-dnd@0.1.0 start: `react-scripts start`\nExit status 3221225786",
+      "code": "ELIFECYCLE",
+      "stack": "Error: hackathon-dnd@0.1.0 start: `react-scripts start`\nExit status 3221225786\n    at EventEmitter.proc.on (C:\\Users\\Jarred\\AppData\\Roaming\\npm\\node_modules\\pnpm\\lib\\node_modules\\@zkochan\\npm-lifecycle\\index.js:302:16)\n    at EventEmitter.emit (events.js:182:13)\n    at ChildProcess.<anonymous> (C:\\Users\\Jarred\\AppData\\Roaming\\npm\\node_modules\\pnpm\\lib\\node_modules\\@zkochan\\npm-lifecycle\\lib\\spawn.js:55:14)\n    at ChildProcess.emit (events.js:182:13)\n    at maybeClose (internal/child_process.js:962:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5)"
+    }
+  }
+}
