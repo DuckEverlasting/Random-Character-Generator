@@ -114,7 +114,7 @@ class CreatureForm extends Component {
                         onChange={this.onChangeHandler}
                     />
 
-                    Number of Encounters:
+                    Number of Creatures:
                     <input
                         type="number"
                         min="1"
