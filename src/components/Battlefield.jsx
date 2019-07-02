@@ -11,12 +11,12 @@ class Battlefield extends React.Component {
   state = {
     monsters: [
       {
-        name: "Rug of Smothering",
+        name: "Rug of Smothering2",
         hit_points: 64,
         initiative: 18,
         location: "Arctic",
         id: 2,
-        is_Alive: true
+        is_Alive: false
       },
       {
         name: "Rug of Smothering",
@@ -390,6 +390,7 @@ class Battlefield extends React.Component {
             Next
           </InitiativeButton>
         </ButtonBox>
+
         <FieldBox
           style={{
             backgroundImage: `url(/assets/${this.state.terrain}.jpg)`
@@ -431,27 +432,26 @@ const Battlegrounds = styled.div`
 const FieldBox = styled.div`
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  flex-flow: wrap
   align-items: center;
   justify-content: space-around;
-  height: 67%;
+  height: 75%;
   overflow-y: scroll;
   background-repeat: no-repeat;
   background-positon: center;
 `;
 
 const ShadowRealmBox = styled.div`
-  height: 33%;
+  height: 25%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  overflow-x: scroll;
+  align-items: safe center;
+  overflow-x: auto
   background: url(https://cdn.pixabay.com/photo/2018/01/30/13/08/old-3118750_1280.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: .6
+  opacity: 0.6;
   width: 100%;
 `;
 

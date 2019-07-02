@@ -90,6 +90,7 @@ const NameHolder = styled.div`
 
 const CreatureToken = styled(Card)({
   width: "20%",
+  minWidth: "20%",
   height: "25%",
   padding: "1%",
   textAlign: "center",
