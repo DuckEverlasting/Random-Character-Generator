@@ -379,6 +379,9 @@ class Battlefield extends React.Component {
   };
 
   render() {
+    if (this.props.formPending === true) {
+      return <div>Loading...</div>;
+    }
     return (
       <Battlegrounds>
         <ButtonBox>
@@ -392,13 +395,13 @@ class Battlefield extends React.Component {
 
         <FieldBox
           style={{
-            backgroundImage: `url(/assets/${this.state.terrain}.jpg)`
+            backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
-          <Field monsters={this.state.list} />
+          <Field monsters={this.props.monsters} />
         </FieldBox>
         <ShadowRealmBox>
-          <ShadowRealm monster={this.state.list} />
+          <ShadowRealm monster={this.props.monsters} />
         </ShadowRealmBox>
       </Battlegrounds>
     );
@@ -458,7 +461,9 @@ const ShadowRealmBox = styled.div`
 const mapStateToProps = state => {
   return {
     monsters: state.monsters,
-    players: state.players
+    players: state.players,
+    formPending: state.formPending,
+    formError: state.formError
   };
 };
 
