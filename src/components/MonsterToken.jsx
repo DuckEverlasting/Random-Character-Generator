@@ -52,7 +52,7 @@ class MonsterToken extends React.Component {
           </StatHolder>
           <WordStat>
             <Typography style={{ fontWeight: "bold" }}>Speed:</Typography>
-            <Typography>
+            <Speed>
               {this.props.monster.speed.burrow
                 ? "Burrow: " + this.props.monster.speed.burrow
                 : null}{" "}
@@ -74,7 +74,7 @@ class MonsterToken extends React.Component {
               {this.props.monster.speed.walk
                 ? "Walk: " + this.props.monster.speed.walk + " "
                 : null}{" "}
-            </Typography>
+            </Speed>
           </WordStat>
           <WordStat>
             <Typography style={{ fontWeight: "bold" }}>Resistances:</Typography>
@@ -106,8 +106,8 @@ const NameHolder = styled.div`
 `;
 
 const CreatureToken = styled(Card)({
-  width: "105px",
-  height: "144px",
+  width: "115px",
+  height: "150px",
   padding: "1%",
   textAlign: "center",
   margin: "2px",
@@ -136,6 +136,13 @@ const NumberStat = styled.div`
   align-items: center;
   width: 30%;
 `;
+
+const Speed = styled(Typography)({
+  display: "flex",
+  justifyContent: "space-between",
+  flexDirection: "row",
+  flexFlow: "wrap"
+});
 
 const WordStat = styled.div`
   display: flex;

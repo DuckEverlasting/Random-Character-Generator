@@ -13,11 +13,9 @@ class Battlefield extends React.Component {
     formUpdated: true
   };
 
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     if (this.props.formUpdated) {
       let temp = this.props.monsters.map((i, index) => ({
         ...i,
@@ -37,9 +35,12 @@ class Battlefield extends React.Component {
       temp = temp.sort((a, b) => {
         return b.initiative - a.initiative;
       });
-      this.setState({
-        list: temp
-      },this.props.dataRecieved);
+      this.setState(
+        {
+          list: temp
+        },
+        this.props.dataRecieved
+      );
     }
   }
 
@@ -74,7 +75,7 @@ class Battlefield extends React.Component {
 
         <FieldBox
           style={{
-            backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
+            backgroundImage: `url(/assets/${this.state.terrain}.jpg)`
           }}
         >
           <Field monsters={this.state.list} />
@@ -143,7 +144,8 @@ const mapStateToProps = state => {
     players: state.players,
     formPending: state.formPending,
     formError: state.formError,
-    formUpdated:state.formUpdated
+    formUpdated: state.formUpdated,
+    terrain: state.terrain
   };
 };
 
