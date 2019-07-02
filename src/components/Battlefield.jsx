@@ -8,18 +8,346 @@ import {dataRecieved} from '../actions'
 
 class Battlefield extends React.Component {
   state = {
-    monsters:arr,
-    players:[],
+    monsters: [
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 2,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 3,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 4,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 5,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 6,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 7,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 8,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 9,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 10,
+        is_Alive: true
+      },
+      {
+        name: "Joshua, Lord of Light",
+        hit_points: 15,
+        initiative: 6,
+        location: "Grasslands",
+        id: 11,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 12,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 13,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 14,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 15,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 16,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 17,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 18,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 19,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 20,
+        is_Alive: true
+      },
+      {
+        name: "Joshua, Lord of Light",
+        hit_points: 15,
+        initiative: 6,
+        location: "Grasslands",
+        id: 1,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 2,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 3,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 4,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 5,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 6,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 7,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 8,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 9,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 10,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 12,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 13,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 14,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 15,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 16,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 17,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 18,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 19,
+        is_Alive: true
+      },
+      {
+        name: "Rug of Smothering",
+        hit_points: 64,
+        initiative: 18,
+        location: "Arctic",
+        id: 20,
+        is_Alive: true
+      }
+    ],
+    players:[
+      {
+        name: "Joshua, Lord of Light",
+        hit_points: 15,
+        initiative: 6,
+        location: "Grasslands",
+        id: 1,
+        is_Alive: true
+      },
+      {
+        name: "Joshua, Lord of Light",
+        hit_points: 15,
+        initiative: 6,
+        location: "Grasslands",
+        id: 11,
+        is_Alive: true
+      }
+    ],
+    terrain: "Grasslands",
     list:[],
     formUpdated:true
-  }
+  };
 
   componentDidMount(){
     if(this.state.formUpdated){
-      let temp=this.state.monsters.map(i=>({...i,
+      let temp=this.state.monsters.map((i,index)=>({...i,
           initiative:Math.floor(Math.random()*20+1 +(Math.floor((i.dexterity-10)/2))),
-          is_Alive:true
-      })).concat(this.state.players)
+          is_Alive:true,
+          id:index
+      }))
+      temp=temp.concat(this.state.players.map((char,i)=>({
+        ...char,
+        id:temp.length+i
+      })))
 
       temp.sort((a,b)=>a.inititative-b.inititative)
       this.setState({
@@ -33,6 +361,7 @@ class Battlefield extends React.Component {
     let temp=this.state.list.map(i=>i)
     let tempChar=temp.shift()
     temp.push(tempChar)
+    console.log(temp);
     this.setState({list:temp})
   }
 
