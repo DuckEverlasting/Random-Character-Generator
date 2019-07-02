@@ -3,19 +3,20 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Field from "./Field";
 import ShadowRealm from "./ShadowRealm";
-import {arr} from '../utils/dummyData'
-import {dataRecieved} from '../actions'
+import { arr } from "../utils/dummyData";
+import { dataRecieved } from "../actions";
+import Button from "@material-ui/core/Button";
 
 class Battlefield extends React.Component {
   state = {
     monsters: [
       {
-        name: "Rug of Smothering",
+        name: "Rug of Smothering2",
         hit_points: 64,
         initiative: 18,
         location: "Arctic",
         id: 2,
-        is_Alive: true
+        is_Alive: false
       },
       {
         name: "Rug of Smothering",
@@ -314,7 +315,7 @@ class Battlefield extends React.Component {
         is_Alive: true
       }
     ],
-    players:[
+    players: [
       {
         name: "Joshua, Lord of Light",
         hit_points: 15,
@@ -333,53 +334,63 @@ class Battlefield extends React.Component {
       }
     ],
     terrain: "Grasslands",
-    list:[],
-    formUpdated:true
+    list: [],
+    formUpdated: true
   };
 
-  componentDidMount(){
-    if(this.state.formUpdated){
-      let temp=this.state.monsters.map((i,index)=>({...i,
-          initiative:Math.floor(Math.random()*20+1 +(Math.floor(( (i.dexterity || 10) -10)/2))),
-          is_Alive:true,
-          id:index
-      }))
-      temp=temp.concat(this.state.players.map((char,i)=>({
-        ...char,
-        id:temp.length+i
-      })))
+  componentDidMount() {
+    if (this.state.formUpdated) {
+      let temp = this.state.monsters.map((i, index) => ({
+        ...i,
+        initiative: Math.floor(
+          Math.random() * 20 + 1 + Math.floor(((i.dexterity || 10) - 10) / 2)
+        ),
+        is_Alive: true,
+        id: index
+      }));
+      temp = temp.concat(
+        this.state.players.map((char, i) => ({
+          ...char,
+          id: temp.length + i
+        }))
+      );
 
-      temp=temp.sort((a,b)=>{
-        return b.initiative-a.initiative
-      })
+      temp = temp.sort((a, b) => {
+        return b.initiative - a.initiative;
+      });
       this.setState({
-        list:temp,
-        formUpdated:false
-      })
+        list: temp,
+        formUpdated: false
+      });
     }
   }
 
-  next=e=>{
-    let temp=this.state.list.map(i=>i)
-    let tempChar=temp.shift()
-    temp.push(tempChar)
-    this.setState({list:temp})
-  }
+  next = e => {
+    let temp = this.state.list.map(i => i);
+    let tempChar = temp.shift();
+    temp.push(tempChar);
+    this.setState({ list: temp });
+  };
 
-  last=e=>{
-    let temp=this.state.list.map(i=>i)
-    let tempChar=temp.pop()
-    temp.unshift(tempChar)
-    this.setState({list:temp})
-  }
+  last = e => {
+    let temp = this.state.list.map(i => i);
+    let tempChar = temp.pop();
+    temp.unshift(tempChar);
+    this.setState({ list: temp });
+  };
 
   render() {
-    
     return (
       <Battlegrounds>
-        <section className="buttonBox">
-          <button onClick={this.last}>Previous</button><button onClick={this.next}>Next</button>
-        </section>
+        <ButtonBox>
+          <InitiativeButton variant="contained" onClick={this.last}>
+            Previous
+          </InitiativeButton>
+          <InitiativeButton variant="contained" onClick={this.next}>
+            Next
+          </InitiativeButton>
+        </ButtonBox>
+
         <FieldBox
           style={{
             backgroundImage: `url(/assets/${this.state.terrain}.jpg)`
@@ -395,51 +406,68 @@ class Battlefield extends React.Component {
   }
 }
 
+const InitiativeButton = styled(Button)({
+  backgroundColor: "#cf291d !important",
+  width: "25%"
+});
+
+const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 5%;
+  width: 100%;
+`;
+
 const Battlegrounds = styled.div`
-display: flex;
-flex-direction: column;
-height: 77vh;
-width: 50%;
-@media (max-width: 800px) {
-      width: 100%;
-    }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const FieldBox = styled.div`
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  flex-flow: wrap
   align-items: center;
   justify-content: space-around;
-  height: 67%;
-  overflow: scroll;
+  height: 75%;
+  overflow-y: scroll;
   background-repeat: no-repeat;
   background-positon: center;
 `;
 
 const ShadowRealmBox = styled.div`
-height: 33%;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-around;
-overflow: scroll;
-background: url(https://cdn.pixabay.com/photo/2018/01/30/13/08/old-3118750_1280.jpg);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-width: 100%`;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: safe center;
+  overflow-x: auto
+  background: url(https://cdn.pixabay.com/photo/2018/01/30/13/08/old-3118750_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  width: 100%;
+`;
 
 //redux
 const mapStateToProps = state => {
   return {
-    monsters: state.moonsters,
+    monsters: state.monsters,
     players: state.players
   };
 };
 
-const mapDispatchToProps={
+const mapDispatchToProps = {
   dataRecieved
-}
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(Battlefield);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Battlefield);
