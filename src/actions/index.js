@@ -1,6 +1,6 @@
 import axios from "axios";
 import buildEncounter from "../logic/buildEncounter.js"
-import {moreInfo} from "../data/moreMonsterInfo.js"
+import {filter,byId,byName,convertToJson} from '../utils/remoteAxios'
 
 export const [
   SUBMIT_FORM_START,
@@ -49,10 +49,15 @@ export const submitForm = data => async dispatch => {
     }
   )
 
+  filteredByCr=filteredByCr.map(creature=>convertToJson(creature))
+
   const filteredByType = filteredByCr.filter(monster => monster.type === type)
 
   const filteredByTerrain = filteredByType.filter(monster => {
-    // NEEDS MOAR LOGIC
+    if(terrain==="all" || monster.terrain.includes(terrain))
+      return true
+    else
+      return false
   })
 
   const filteredByAlignment = filteredByTerrain.filter(monster => monster.alignment === alignment)
