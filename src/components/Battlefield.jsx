@@ -84,7 +84,7 @@ const FieldBox = styled.div`
   height: 67%;
   overflow: scroll;
   background-repeat: no-repeat;
-  /* background-positon: center; */
+  background-positon: center;
 `;
 
 const ShadowRealmBox = styled.div`
