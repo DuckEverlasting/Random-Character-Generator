@@ -1,6 +1,9 @@
 export default function (encounterLevel, numberEncounter, filteredByAlignment) {
   numberEncounter=Number(numberEncounter)
   encounterLevel=Number(encounterLevel)
+  if(filteredByAlignment.length<1){
+    return 'No Creatures Fit'
+  }
   let temp=[]
   while(numberEncounter>1){
     let modifier=encounterLevel-numberEncounter+1
@@ -43,9 +46,15 @@ export default function (encounterLevel, numberEncounter, filteredByAlignment) {
       else
         return Number(creature.challenge_rating) === encounterLevel
     })
+
+    if(tempSmall.length<1){
+      tempSmall=filteredByAlignment.filter(creature=>isNaN(creature.challenge_rating) || creature.challenge_rating===1)
+    }
+
     let pickedCreature=tempSmall[
       Math.floor(Math.random()*tempSmall.length+1)
     ]
+
     temp.push(pickedCreature)
     // encounterLevel-=pickedCreature.challenge_rating
     numberEncounter--

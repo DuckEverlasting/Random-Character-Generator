@@ -30,18 +30,20 @@ export const submitForm = data => async dispatch => {
 
   const {encounterLevel, numberEncounter, type, terrain, alignment} = data;
 
-  let res=await axios.get(byCr(encounterLevel))
+  let url=byCr(encounterLevel)
+  if(terrain!=='any')
+    url+=`?terrain=${terrain[0].toUpperCase()+terrain.slice(1)}`
+
+  let res=await axios.get(url)
   let list=await res.data
 
   list=list.map(monster=>convertToJson(monster))
 
   const filteredByType = list.filter(monster => type===[] || type.includes("any") || type.includes(monster.type))
+  
+  console.log(filteredByType);
 
-  const filteredByTerrain = filteredByType.filter(monster => {
-    return (terrain==='any' || monster.terrain.includes(terrain))
-  })
-
-  const filteredByAlignment = filteredByTerrain.filter(monster => alignment.includes('any') || alignment.includes(monster.alignment))
+  const filteredByAlignment = filteredByType.filter(monster => alignment.includes('any') || alignment.includes(monster.alignment))
 
   const finalData = buildEncounter(encounterLevel, numberEncounter, filteredByAlignment)
 
