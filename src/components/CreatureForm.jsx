@@ -188,7 +188,7 @@ class CreatureForm extends Component {
                 <h1>Add Players</h1>
                 <form onSubmit={this.addPlayer} autoComplete='off'>
 
-                    Player Name:
+                    Name:
                     <input
                         type="text"
                         name="name"
@@ -197,7 +197,7 @@ class CreatureForm extends Component {
                     />
 
                     
-                    Player Level:
+                    Level:
                     <input
                         type="number"
                         min="1"
@@ -207,7 +207,7 @@ class CreatureForm extends Component {
                         onChange={this.onChangePlayer}
                     />
 
-                    Initiative:
+                    Initiative Modifier:
                     <input
                         type="number"
                         min="1"
