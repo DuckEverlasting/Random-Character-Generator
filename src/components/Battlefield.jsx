@@ -380,6 +380,9 @@ class Battlefield extends React.Component {
   };
 
   render() {
+    if (this.props.formPending === true) {
+      return <div>Loading...</div>;
+    }
     return (
       <Battlegrounds>
         <ButtonBox>
@@ -459,7 +462,9 @@ const ShadowRealmBox = styled.div`
 const mapStateToProps = state => {
   return {
     monsters: state.monsters,
-    players: state.players
+    players: state.players,
+    formPending: state.formPending,
+    formError: state.formError
   };
 };
 
