@@ -98,13 +98,13 @@ class CreatureForm extends Component {
     render() {
         return (
             <div className='form-container'>
-                <h1>Generate Random Creature</h1>
-                <p className='instructions'>For Windows: Hold down the <strong>Control button + Click</strong> to select multiple option.
-                For Mac: Hold down the <strong>Command button + Click</strong> to select multiple options.</p>
-
+                <h1>Generate Random Encounter</h1>
+                {//<p className='instructions'>For Windows: Hold down the <strong>Control button + Click</strong> to select multiple option.
+                //For Mac: Hold down the <strong>Command button + Click</strong> to select multiple options.</p>
+        }       <div className='form-wrapper'>
                 <form onSubmit={this.onSubmitHandler} autoComplete='off'>
 
-                    Encounter Level:
+                    <h3>Encounter Level:</h3>
                     <input
                         type="number"
                         min="1"
@@ -114,7 +114,7 @@ class CreatureForm extends Component {
                         onChange={this.onChangeHandler}
                     />
 
-                    Number of Creatures:
+                    <h3>Number of Creatures:</h3>
                     <input
                         type="number"
                         min="1"
@@ -124,7 +124,7 @@ class CreatureForm extends Component {
                         onChange={this.onChangeHandler}
                     />
 
-                    Encounter Type:
+                    <h3>Encounter Type:</h3>
                     <select
                         multiple={true}
                         value={this.state.info.type}
@@ -147,7 +147,7 @@ class CreatureForm extends Component {
                         <option value="undead">Undead</option>
                     </select>
 
-                    Terrain or Habitat of Encounter:
+                    <h3>Terrain or Habitat of Encounter:</h3>
                     <select
                         name="terrain"
                         placeholder="x"
@@ -221,6 +221,7 @@ class CreatureForm extends Component {
 
                     <button type='submit'>Add Player</button>
                 </form>
+                </div>
 
             </div>
         );
