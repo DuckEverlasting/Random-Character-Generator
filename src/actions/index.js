@@ -1,6 +1,6 @@
 import axios from "axios";
 import buildEncounter from "../logic/buildEncounter.js"
-import {filter,byId,byName,convertToJson} from '../utils/remoteAxios'
+import {filter,convertToJson, monstersFull} from '../utils/remoteAxios'
 
 export const [
   SUBMIT_FORM_START,
@@ -25,7 +25,10 @@ export const [
 ];
 
 export const submitForm = data => async dispatch => {
+  
   dispatch({ type: SUBMIT_FORM_START });
+
+  console.log(data);
 
   const allCrs = [
     "1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -33,12 +36,13 @@ export const submitForm = data => async dispatch => {
   ]
 
   const {encounterLevel, numberEncounter, type, terrain, alignment} = data;
-
-  const crsToRequest = allCrs.slice(0, allCrs.indexOf(`${encounterLevel}`))
-
-  const filteredByCr = await crsToRequest.map(async cr => {
+  
+  const crsToRequest = allCrs.slice(0, allCrs.indexOf(`${encounterLevel}`)+1)
+  
+  let filteredByCr = await crsToRequest.map(async cr => {
+    console.log(`attempting ${monstersFull}`);
       await axios
-        .get('https://api-beta.open5e.com/monsters', {challenge_rating:cr})
+        .get(monstersFull, {challenge_rating:cr})
         .then(res => {
           return res.results
         })
@@ -49,22 +53,22 @@ export const submitForm = data => async dispatch => {
     }
   )
 
-  filteredByCr=filteredByCr.map(creature=>convertToJson(creature))
+  // filteredByCr=filteredByCr.map(creature=>convertToJson(creature))
 
-  const filteredByType = filteredByCr.filter(monster => monster.type === type)
+  // const filteredByType = filteredByCr.filter(monster => monster.type === type)
 
-  const filteredByTerrain = filteredByType.filter(monster => {
-    if(terrain==="all" || monster.terrain.includes(terrain))
-      return true
-    else
-      return false
-  })
+  // const filteredByTerrain = filteredByType.filter(monster => {
+  //   if(terrain==="all" || monster.terrain.includes(terrain))
+  //     return true
+  //   else
+  //     return false
+  // })
 
-  const filteredByAlignment = filteredByTerrain.filter(monster => monster.alignment === alignment)
+  // const filteredByAlignment = filteredByTerrain.filter(monster => monster.alignment === alignment)
 
-  const finalData = buildEncounter(encounterLevel, numberEncounter, filteredByAlignment)
+  // const finalData = buildEncounter(encounterLevel, numberEncounter, filteredByAlignment)
 
-  dispatch({ type: SUBMIT_FORM_SUCCESS, payload: finalData });
+  // dispatch({ type: SUBMIT_FORM_SUCCESS, payload: finalData });
 };
 
 export const submitPlayer = player => {

@@ -1,6 +1,6 @@
 export const baseURL='https://random-character-generator-be.herokuapp.com'
 export const monstersFull=`${baseURL}/monsters`
-export const filter=`${monstersFull}/filter/`
+export const filter=`${monstersFull}/filter`
 export const byId=id=>`${monstersFull}/id/${id}`
 export const byName=name=>`${monstersFull}/name/${name}`
 

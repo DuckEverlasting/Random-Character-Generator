@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import {submitForm as sf} from '../actions'
+import {connect} from 'react-redux'
 // Encounter Level - number input
 // Number of Monsters - number input
 // Type selector - select multiple as well
@@ -26,13 +27,7 @@ class CreatureForm extends Component {
 
     onSubmitHandler = event => {
         event.preventDefault();
-        console.log(`Encounter State: 
-        EL: ${this.state.info.encounterLevel}, 
-        NE: ${this.state.info.numberEncounter}, 
-        TYPE: ${this.state.info.type}, 
-        Terrain: ${this.state.info.terrain}, 
-        Alignment: ${this.state.info.alignment}`);
-
+        this.props.sf({...this.state.info})
     }
 
     onChangeHandler = event => {
@@ -129,7 +124,7 @@ class CreatureForm extends Component {
                         value={this.state.info.type}
                         onChange={this.handleType}
                     >
-
+                        <option value="any">Any/All</option>
                         <option value="aberration">Aberration</option>
                         <option value="beast">Beast</option>
                         <option value="celestial">Celestial</option>
@@ -155,6 +150,7 @@ class CreatureForm extends Component {
                     >
 
                         <option value="x" hidden>Terrain</option>
+                        <option value="any">Any/All</option>
                         <option value="arctic">Arctic</option>
                         <option value="coastal">Coastal</option>
                         <option value="desert">Desert</option>
@@ -217,4 +213,13 @@ class CreatureForm extends Component {
     }
 }
 
-export default CreatureForm;
+const mapStateToProps = (state, ownProps) => ({
+    
+})
+
+
+const mapDispatchToProps = {
+    sf
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreatureForm)

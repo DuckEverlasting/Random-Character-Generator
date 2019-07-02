@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Field from "./Field";
 import ShadowRealm from "./ShadowRealm";
-import { arr } from "../utils/dummyData";
 import { dataRecieved } from "../actions";
 import Button from "@material-ui/core/Button";
 
