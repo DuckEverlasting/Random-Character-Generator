@@ -43,7 +43,7 @@ export default function (encounterLevel, numberEncounter, filteredByAlignment) {
       Math.floor(Math.random()*tempSmall.length+1)
     ]
     temp.push(pickedCreature)
-    encounterLevel-=pickedCreature.challenge_rating
+    // encounterLevel-=pickedCreature.challenge_rating
     numberEncounter--
   }
 

@@ -45,7 +45,7 @@ export const submitForm = data => async dispatch => {
 
   const finalData = buildEncounter(encounterLevel, numberEncounter, filteredByAlignment)
 
-  dispatch({ type: SUBMIT_FORM_SUCCESS, payload: finalData });
+  dispatch({ type: SUBMIT_FORM_SUCCESS, payload: {monsters:finalData,terrain:terrain} });
 };
 
 export const submitPlayer = player => {
