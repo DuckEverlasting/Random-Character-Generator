@@ -2,7 +2,7 @@ export default function (encounterLevel, numberEncounter, filteredByAlignment) {
   numberEncounter=Number(numberEncounter)
   encounterLevel=Number(encounterLevel)
   if(filteredByAlignment.length<1){
-    return 'No Creatures Fit'
+    return []
   }
   let temp=[]
   while(numberEncounter>1){
