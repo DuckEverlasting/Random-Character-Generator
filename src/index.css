@@ -25,39 +25,33 @@ header {
 footer {
   height: 5%;
   border: 1px solid red;
-
+}
 
 .about-body {
   background: #202020;
   color: white;
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
   font-size: 2rem;
   text-align: center;
   margin: 0 auto;
   width: 80%;
-
-
 }
 
 .about-body button {
-  background-color: #CF291D;
+  background-color: #cf291d;
   color: white;
   border: none;
   margin: 2rem;
   padding: 1rem;
   width: 10rem;
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
   font-style: normal;
   font-weight: bold;
-
-
 }
 
 .about-body button:hover {
   background-color: black;
-
 }
-
 
 .left-column {
   height: 93%;
@@ -71,13 +65,13 @@ main {
   border: 1px solid purple;
 }
 
-.monster-info{
+.monster-info {
   border: 1px solid blue;
   height: 70%;
-  overflow:auto;
+  overflow: auto;
 }
 
-.battlefield{
+.battlefield {
   border: 1px solid green;
   height: 30%;
 }
@@ -85,17 +79,16 @@ main {
 .form {
   height: 70%;
   border: 1px solid red;
-
 }
 
 .player-info-input {
   height: 30%;
   border: 1px solid red;
-=======
+}
+
 .logo {
   width: 10rem;
 }
-
 
 .pic-of-us {
   width: 264px;
@@ -105,13 +98,11 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .people {
   padding: 1rem;
 }
-
 
 .img-container h4 {
   text-align: center;
