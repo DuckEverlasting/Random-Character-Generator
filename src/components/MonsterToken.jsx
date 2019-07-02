@@ -8,7 +8,7 @@ class MonsterToken extends React.Component {
   monsterDeath = e => {
     e.preventDefault();
     e.stopPropagation();
-    toggleMonsterDeath(this.props.monster.id);
+    this.props.toggleMonsterDeath(this.props.monster.id);
     console.log("dead");
   };
 
@@ -135,5 +135,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { toggleMonsterDeath, selectMonster }
+  { toggleMonsterDeath, selectCreature }
 )(MonsterToken);
