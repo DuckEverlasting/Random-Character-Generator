@@ -240,7 +240,7 @@ class CreatureForm extends Component {
             value={this.state.player.level}
             onChange={this.onChangePlayer}
           />
-          Initiative Modifier:
+          Initiative:
           <input
             type="number"
             min="1"
