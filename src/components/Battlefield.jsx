@@ -41,13 +41,14 @@ class Battlefield extends React.Component {
         },
         this.props.dataRecieved
       );
-    }else if(this.props.creatureDead!==undefined){
-      this.props.dataRecieved()
-      this.setState((prevState) => ({ 
-          ...prevState,
-          list:prevState.list
-                .map(i=>i.id===this.props.creatureDead?{...i,is_Alive:!i.is_Alive}:i)
-       }))
+    } else if (this.props.creatureDead !== undefined) {
+      this.props.dataRecieved();
+      this.setState(prevState => ({
+        ...prevState,
+        list: prevState.list.map(i =>
+          i.id === this.props.creatureDead ? { ...i, is_Alive: !i.is_Alive } : i
+        )
+      }));
     }
   }
 
@@ -66,6 +67,7 @@ class Battlefield extends React.Component {
   };
 
   render() {
+    console.log(this.state.list);
     if (this.props.formPending === true) {
       return <div>Loading...</div>;
     }
@@ -89,15 +91,15 @@ class Battlefield extends React.Component {
         <FieldBox
           style={{
             backgroundImage:
-              !this.props.terrain || this.props.terrain === "any"
-                ? `url(/assets/grasslands.jpg)`
+              !this.props.terrain || this.props.terrain === "x"
+                ? `url(/assets/grassland.jpg)`
                 : `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
           <Field monsters={this.state.list} />
         </FieldBox>
         <ShadowRealmBox>
-          <ShadowRealm monster={this.state.list} />
+          <ShadowRealm monsters={this.state.list} />
         </ShadowRealmBox>
       </Battlegrounds>
     );
@@ -128,9 +130,6 @@ const Battlegrounds = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 70%;
-  @media (max-width: 800px) {
-    width: 100%;
-  }
 `;
 
 const FieldBox = styled.div`
@@ -167,7 +166,7 @@ const mapStateToProps = state => {
     formError: state.formError,
     formUpdated: state.formUpdated,
     terrain: state.terrain,
-    creatureDead:state.creatureDead
+    creatureDead: state.creatureDead
   };
 };
 
