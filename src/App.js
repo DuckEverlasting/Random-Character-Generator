@@ -16,7 +16,7 @@ function App() {
       {selection && <MV/>}
       {!selection && <CreatureForm />}
       <Battlefield />
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
   );
