@@ -15,7 +15,7 @@ class CreatureForm extends Component {
         encounterLevel: 0,
         numberEncounter: 0,
         type: [],
-        terrain: "x",
+        terrain: "any",
         alignment: []
       },
       player: {
@@ -205,17 +205,17 @@ class CreatureForm extends Component {
             value={this.state.info.alignment}
             onChange={this.handleAlignment}
           >
-            <option value="any" selected>Any/All</option>
-            <option value="Unaligned">Unaligned</option>
-            <option value="Lawful Good">Lawful Good</option>
-            <option value="Neutral Good">Neutral Good</option>
-            <option value="Chaotic Good">Chaotic Good</option>
-            <option value="Lawful Neutral">Lawful Neutral</option>
-            <option value="Neutral">Neutral</option>
-            <option value="Chaotic Neutral">Chaotic Neutral</option>
-            <option value="Lawful Evil">Lawful Evil</option>
-            <option value="Neutral Evil">Neutral Evil</option>
-            <option value="Chaotic Evil">Chaotic Evil</option>
+            <option value="any">Any/All</option>
+            <option value="unaligned">Unaligned</option>
+            <option value="lawful good">Lawful Good</option>
+            <option value="neutral good">Neutral Good</option>
+            <option value="chaotic good">Chaotic Good</option>
+            <option value="lawful neutral">Lawful Neutral</option>
+            <option value="neutral">Neutral</option>
+            <option value="chaotic neutral">Chaotic Neutral</option>
+            <option value="lawful evil">Lawful Evil</option>
+            <option value="neutral evil">Neutral Evil</option>
+            <option value="chaotic evil">Chaotic Evil</option>
           </select>
           <button type="submit">Generate</button>
         </form>

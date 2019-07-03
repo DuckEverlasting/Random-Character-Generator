@@ -111,7 +111,10 @@ class Battlefield extends React.Component {
                 : `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
-          <Field monsters={this.state.list} />
+          {this.state.list.filter(monster => monster.is_Alive === true).length >
+          0 ? (
+            <Field monsters={this.state.list} />
+          ) : null}
         </FieldBox>
         {this.state.list.filter(monster => monster.is_Alive === false).length >
         0 ? (
@@ -149,7 +152,7 @@ position: relative;
   flex-direction: column;
   height: 100vh;
   width: 70%;
-  max-width: 1080px;
+  max-width: 1260px;
   z-index: 1;
 `;
 
@@ -166,7 +169,7 @@ const FieldBox = styled.div`
 `;
 
 const ShadowRealmBox = styled.div`
-  height: 30%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   align-items: safe center;
@@ -184,17 +187,16 @@ const LoadingScreen = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10%;
-  background: #202020;
+  background: #262626;
   height: 100%;
   width: 100%;
-  max-width: 1080px;
   color: white;
   font-size: 40px;
   overflow: hidden;
   opacity: ${props => props.visible ? "1" : "0"};
   transition: opacity .2s;
   z-index: 2;
+  pointer-events: none;
 `;
 
 const LoadingBox = styled.div`
@@ -203,16 +205,19 @@ const LoadingBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20%;
 `;
 
 const CircularProgressSC = styled(CircularProgress)`
   position: absolute;
   opacity: ${props => props.visible ? "1" : "0"};
   transition: opacity .1s;
+  
 `
 
 const LoadingImg = styled.img`
   width: 10%;
+  
 `
 
 //redux
