@@ -11,6 +11,7 @@ import {
 } from "../actions";
 
 const initialState = {
+  titleVisible: true,
   formUpdated: false,
   formPending: false,
   formError: [],
@@ -18,7 +19,7 @@ const initialState = {
   monsters: [],
   players: [],
   selected: undefined,
-  creatureDead:undefined
+  creatureDead: undefined
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -37,7 +38,8 @@ const rootReducer = (state = initialState, action) => {
         formUpdated: true,
         formError: [],
         monsters: action.payload.monsters,
-        terrain: action.payload.terrain
+        terrain: action.payload.terrain,
+        titleVisible: false
       };
     case SUBMIT_FORM_FAILURE:
       return {
@@ -59,7 +61,8 @@ const rootReducer = (state = initialState, action) => {
           ...state.players,
           action.payload
         ],
-        formUpdated:true
+        formUpdated:true,
+        titleVisible: false
       };
     case TOGGLE_MONSTER_DEATH:
       return {
@@ -90,7 +93,10 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         selected: undefined,
-        terrain:""
+        terrain:"",
+        monsters: [],
+        players: [],
+        titleVisible: true
       };
     default:
       return state;

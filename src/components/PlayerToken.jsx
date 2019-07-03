@@ -29,7 +29,13 @@ class PlayerToken extends React.Component {
     }
 
     return (
-      <CreatureToken>
+      <CreatureToken
+        style={{
+          backgroundColor:
+            this.props.monster.is_Alive === false ? "#E1644A" : "white"
+        }}
+        alive={this.props.monster.is_Alive}
+      >
         <MonsterInfo>
           <NameHolder>
             <Name>{this.props.monster.name}</Name>
