@@ -9,7 +9,7 @@ class MonsterToken extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.toggleMonsterDeath(this.props.monster.id);
-    console.log("dead");
+    console.log(this.props.monster.id);
   };
 
   selectMonster = e => {
@@ -52,9 +52,29 @@ class MonsterToken extends React.Component {
           </StatHolder>
           <WordStat>
             <Typography style={{ fontWeight: "bold" }}>Speed:</Typography>
-            <Typography>
-              {this.props.monster.speed ? this.props.monster.speed : "N/A"}
-            </Typography>
+            <Speed>
+              {this.props.monster.speed.burrow
+                ? "Burrow: " + this.props.monster.speed.burrow
+                : null}{" "}
+              {this.props.monster.speed.climb
+                ? "Climb: " + this.props.monster.speed.climb + " "
+                : null}{" "}
+              {this.props.monster.speed.fly
+                ? "Fly: " + this.props.monster.speed.fly + " "
+                : null}{" "}
+              {this.props.monster.speed.hover
+                ? "Hover: " + this.props.monster.speed.hover + " "
+                : null}{" "}
+              {this.props.monster.speed.notes
+                ? "Notes: " + this.props.monster.speed.notes + " "
+                : null}{" "}
+              {this.props.monster.speed.swim
+                ? "Swim: " + this.props.monster.speed.swim + " "
+                : null}{" "}
+              {this.props.monster.speed.walk
+                ? "Walk: " + this.props.monster.speed.walk + " "
+                : null}{" "}
+            </Speed>
           </WordStat>
           <WordStat>
             <Typography style={{ fontWeight: "bold" }}>Resistances:</Typography>
@@ -86,12 +106,12 @@ const NameHolder = styled.div`
 `;
 
 const CreatureToken = styled(Card)({
-  width: "105px",
-  height: "144px",
+  width: "115px",
+  height: "150px",
   padding: "1%",
   textAlign: "center",
   margin: "2px",
-  border: "1px solid black"
+  border: "2px solid #cf291d"
 });
 
 const MonsterInfo = styled(CardContent)({
@@ -116,6 +136,13 @@ const NumberStat = styled.div`
   align-items: center;
   width: 30%;
 `;
+
+const Speed = styled(Typography)({
+  display: "flex",
+  justifyContent: "space-between",
+  flexDirection: "row",
+  flexFlow: "wrap"
+});
 
 const WordStat = styled.div`
   display: flex;

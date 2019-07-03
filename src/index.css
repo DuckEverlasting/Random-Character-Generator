@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=MedievalSharp&display=swap");
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,7 +19,7 @@ code {
     monospace;
 }
 
-header {
+/*header {
   height: 7%;
   border: 1px solid red;
   text-align: center;
@@ -26,7 +28,7 @@ footer {
   height: 5%;
   border: 1px solid red;
 }
-
+*/
 .about-body {
   background: #202020;
   color: white;
@@ -42,7 +44,7 @@ footer {
   color: white;
   border: none;
   margin: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 10rem;
   font-family: "MedievalSharp", cursive;
   font-style: normal;
@@ -58,12 +60,12 @@ footer {
   width: 25%;
   border: 1px solid orange;
 }
-
+/*
 main {
   height: 93%;
   width: 75%;
   border: 1px solid purple;
-}
+}*/
 
 .monster-info {
   border: 1px solid blue;
@@ -108,6 +110,62 @@ main {
   text-align: center;
 }
 
+.form-container {
+  background-color: #202020;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  width: 30%;
+  height: 100vh;
+  min-width: 20rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "MedievalSharp", cursive;
+  font-size: 2rem;
+  display: flex;
+}
+
+form {
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+}
+
+form select {
+  background-color: #303030;
+  color: white;
+  margin-top: 0.25rem;
+  width: 15rem;
+}
+form select option {
+  background-color: #303030;
+  color: white;
+  width: 15rem;
+}
+
+form input {
+  background-color: #303030;
+  color: white;
+  width: 15rem;
+}
+
+form button {
+  background-color: #cf291d;
+  color: white;
+  border: none;
+  font-weight: bold;
+  width: 15rem;
+  text-align: center;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+}
+form button:hover {
+  background-color: black;
+}
 /*
 dragon-red: #CF291D
 cement: #ECECEC

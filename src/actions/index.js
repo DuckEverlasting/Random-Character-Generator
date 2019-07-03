@@ -1,6 +1,6 @@
 import axios from "axios";
 import buildEncounter from "../logic/buildEncounter.js"
-import {moreInfo} from "../data/moreMonsterInfo.js"
+import {filter,convertToJson, monstersFull, baseURL, byCr} from '../utils/remoteAxios'
 
 export const [
   SUBMIT_FORM_START,
@@ -25,41 +25,29 @@ export const [
 ];
 
 export const submitForm = data => async dispatch => {
+  
   dispatch({ type: SUBMIT_FORM_START });
-
-  const allCrs = [
-    "1/8", "1/4", "1/2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-    "11", "12", "13", "14", "15", "16", "17", "19", "20", "21", "22", "23", "24"
-  ]
 
   const {encounterLevel, numberEncounter, type, terrain, alignment} = data;
 
-  const crsToRequest = allCrs.slice(0, allCrs.indexOf(`${encounterLevel}`))
+  let url=byCr(encounterLevel)
+  if(terrain!=='any')
+    url+=`?terrain=${terrain[0].toUpperCase()+terrain.slice(1)}`
 
-  const filteredByCr = await crsToRequest.map(async cr => {
-      await axios
-        .get('https://api-beta.open5e.com/monsters', {challenge_rating:cr})
-        .then(res => {
-          return res.results
-        })
-        .catch(err => {
-          dispatch({ type: SUBMIT_FORM_FAILURE, payload: err.data });
-          return "error"
-        });
-    }
-  )
+  let res=await axios.get(url)
+  let list=await res.data
 
-  const filteredByType = filteredByCr.filter(monster => monster.type === type)
+  list=list.map(monster=>convertToJson(monster))
 
-  const filteredByTerrain = filteredByType.filter(monster => {
-    // NEEDS MOAR LOGIC
-  })
+  const filteredByType = list.filter(monster => type===[] || type.includes("any") || type.includes(monster.type))
+  
+  console.log(filteredByType);
 
-  const filteredByAlignment = filteredByTerrain.filter(monster => monster.alignment === alignment)
+  const filteredByAlignment = filteredByType.filter(monster => alignment.includes('any') || alignment.includes(monster.alignment))
 
   const finalData = buildEncounter(encounterLevel, numberEncounter, filteredByAlignment)
 
-  dispatch({ type: SUBMIT_FORM_SUCCESS, payload: finalData });
+  dispatch({ type: SUBMIT_FORM_SUCCESS, payload: {monsters:finalData,terrain:terrain} });
 };
 
 export const submitPlayer = player => {
