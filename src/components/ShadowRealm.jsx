@@ -4,7 +4,7 @@ import MonsterToken from "./MonsterToken";
 class ShadowRealm extends React.Component {
   render() {
     return this.props.monsters !== undefined
-      ? this.props.monster
+      ? this.props.monsters
           .filter(monster => monster.is_Alive === false)
           .map(monster => <MonsterToken key={monster.id} monster={monster} />)
       : null;

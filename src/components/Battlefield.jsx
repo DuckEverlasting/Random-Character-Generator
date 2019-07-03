@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Field from "./Field";
 import ShadowRealm from "./ShadowRealm";
-import { dataRecieved } from "../actions";
+import { dataRecieved, endEncounter } from "../actions";
 import Button from "@material-ui/core/Button";
 
 class Battlefield extends React.Component {
@@ -41,13 +41,14 @@ class Battlefield extends React.Component {
         },
         this.props.dataRecieved
       );
-    }else if(this.props.creatureDead!==undefined){
-      this.props.dataRecieved()
-      this.setState((prevState) => ({ 
-          ...prevState,
-          list:prevState.list
-                .map(i=>i.id===this.props.creatureDead?{...i,is_Alive:!i.is_Alive}:i)
-       }))
+    } else if (this.props.creatureDead !== undefined) {
+      this.props.dataRecieved();
+      this.setState(prevState => ({
+        ...prevState,
+        list: prevState.list.map(i =>
+          i.id === this.props.creatureDead ? { ...i, is_Alive: !i.is_Alive } : i
+        )
+      }));
     }
   }
 
@@ -66,6 +67,7 @@ class Battlefield extends React.Component {
   };
 
   render() {
+    console.log(this.state.list);
     if (this.props.formPending === true) {
       return <div>Loading...</div>;
     }
@@ -78,20 +80,26 @@ class Battlefield extends React.Component {
           <InitiativeButton variant="contained" onClick={this.next}>
             Next
           </InitiativeButton>
+          <EndButton
+            variant="contained"
+            onClick={() => this.props.endEncounter()}
+          >
+            End Encounter
+          </EndButton>
         </ButtonBox>
 
         <FieldBox
           style={{
             backgroundImage:
-              !this.props.terrain || this.props.terrain === "any"
-                ? `url(/assets/grasslands.jpg)`
+              !this.props.terrain || this.props.terrain === "x"
+                ? `url(/assets/grassland.jpg)`
                 : `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
           <Field monsters={this.state.list} />
         </FieldBox>
         <ShadowRealmBox>
-          <ShadowRealm monster={this.state.list} />
+          <ShadowRealm monsters={this.state.list} />
         </ShadowRealmBox>
       </Battlegrounds>
     );
@@ -100,6 +108,11 @@ class Battlefield extends React.Component {
 
 const InitiativeButton = styled(Button)({
   backgroundColor: "#cf291d !important",
+  width: "25%"
+});
+
+const EndButton = styled(Button)({
+  backgroundColor: "#bfbfbf !important",
   width: "25%"
 });
 
@@ -117,9 +130,6 @@ const Battlegrounds = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 70%;
-  @media (max-width: 800px) {
-    width: 100%;
-  }
 `;
 
 const FieldBox = styled.div`
@@ -140,11 +150,10 @@ const ShadowRealmBox = styled.div`
   flex-direction: row;
   align-items: safe center;
   overflow-x: auto;
-  background: url(https://cdn.pixabay.com/photo/2018/01/30/13/08/old-3118750_1280.jpg);
+  background: #202020;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 0.6;
   width: 100%;
 `;
 
@@ -157,12 +166,13 @@ const mapStateToProps = state => {
     formError: state.formError,
     formUpdated: state.formUpdated,
     terrain: state.terrain,
-    creatureDead:state.creatureDead
+    creatureDead: state.creatureDead
   };
 };
 
 const mapDispatchToProps = {
-  dataRecieved
+  dataRecieved,
+  endEncounter
 };
 
 export default connect(
