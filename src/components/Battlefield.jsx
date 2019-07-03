@@ -78,7 +78,7 @@ class Battlefield extends React.Component {
         <FieldBox
           style={{
             backgroundImage:
-              this.props.terrain === "any"
+              !this.props.terrain || this.props.terrain === "any"
                 ? `url(/assets/grasslands.jpg)`
                 : `url(/assets/${this.props.terrain}.jpg)`
           }}
