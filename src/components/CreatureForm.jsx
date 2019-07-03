@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { submitForm as sf, submitPlayer as sp } from "../actions";
 import { connect } from "react-redux";
+// import Footer from './components/Footer';
+
 // Encounter Level - number input
 // Number of Monsters - number input
 // Type selector - select multiple as well
