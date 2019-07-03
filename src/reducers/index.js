@@ -88,7 +88,8 @@ const rootReducer = (state = initialState, action) => {
     case END_ENCOUNTER:
       return {
         ...state,
-        selected: undefined
+        selected: undefined,
+        terrain:""
       };
     default:
       return state;
