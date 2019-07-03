@@ -32,3 +32,25 @@ select {
   max-width: 1800px;
   max-height: 2500px;
 }
+
+footer a {
+  text-decoration:none;
+  color:white;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #202020;
+  color: white;
+  padding: 1% 0;
+  display:flex;
+  flex-direction:row;
+}
+
+footer div {
+  margin: 0 auto;
+}
