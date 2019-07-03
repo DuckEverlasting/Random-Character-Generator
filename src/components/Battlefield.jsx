@@ -6,6 +6,10 @@ import ShadowRealm from "./ShadowRealm";
 import { dataRecieved, endEncounter } from "../actions";
 import Button from "@material-ui/core/Button";
 
+// const LoadingScreen = styled.div`
+//   background: #202020;
+// `
+
 class Battlefield extends React.Component {
   state = {
     terrain: "Grasslands",
@@ -149,7 +153,7 @@ const FieldBox = styled.div`
 `;
 
 const ShadowRealmBox = styled.div`
-  height: 30%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   align-items: safe center;
