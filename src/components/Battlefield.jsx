@@ -149,7 +149,7 @@ const FieldBox = styled.div`
 `;
 
 const ShadowRealmBox = styled.div`
-  height: 30%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   align-items: safe center;
