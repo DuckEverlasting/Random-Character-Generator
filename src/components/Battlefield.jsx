@@ -68,11 +68,19 @@ class Battlefield extends React.Component {
     this.setState({ list: temp });
   };
 
+  endEncounterHandler = ev => {
+    ev.preventDefault();
+    this.setState({
+      list: []
+    })
+    this.props.endEncounter()
+  }
+
   render() {
     return (
       <Battlegrounds>
-        <LoadingScreen visible={(!this.props.monsters.length && !this.props.players.length) || this.props.formPending === true}>
-          <Title visible={(!this.props.monsters.length && !this.props.players.length)}>5e Encounter Generator</Title>
+        <LoadingScreen visible={(this.props.titleVisible) || this.props.formPending === true}>
+          <Title visible={(this.props.titleVisible)}>5e Encounter Generator</Title>
           <LoadingBox>
             <CircularProgressSC visible={this.props.formPending} size={154} thickness={1} color="white" />
             <LoadingImg src="/assets/red-dragon-2.png" />
@@ -87,7 +95,7 @@ class Battlefield extends React.Component {
           </InitiativeButton>
           <EndButton
             variant="contained"
-            onClick={() => this.props.endEncounter()}
+            onClick={this.endEncounterHandler}
           >
             End Encounter
           </EndButton>
@@ -119,14 +127,14 @@ const InitiativeButton = styled(Button)({
   fontSize: "12px !important",
   color: "white !important",
   fontWeight: "bold !important",
-  width: "15%"
+  width: "125px"
 });
 
 const EndButton = styled(Button)({
   backgroundColor: "#bfbfbf !important",
   fontSize: "12px !important",
   fontWeight: "bold !important",
-  width: "15%"
+  width: "150px"
 });
 
 const ButtonBox = styled.div`
@@ -207,7 +215,7 @@ const CircularProgressSC = styled(CircularProgress)`
 `
 
 const LoadingImg = styled.img`
-  width: 10%;
+  width: 100px;
   
 `
 
@@ -216,7 +224,6 @@ const Title = styled.h1`
   text-align: center;
   opacity: ${props => props.visible ? "1" : "0"};
   transition: opacity .1s;
-  transition-delay: .5s;
 `
 
 //redux
@@ -228,7 +235,8 @@ const mapStateToProps = state => {
     formError: state.formError,
     formUpdated: state.formUpdated,
     terrain: state.terrain,
-    creatureDead: state.creatureDead
+    creatureDead: state.creatureDead,
+    titleVisible: state.titleVisible
   };
 };
 
