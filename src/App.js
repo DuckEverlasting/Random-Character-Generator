@@ -3,7 +3,7 @@ import './App.css';
 
 import CreatureForm from './components/CreatureForm';
 import Battlefield from "./components/Battlefield"
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
       <CreatureForm />
       <Battlefield />
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );

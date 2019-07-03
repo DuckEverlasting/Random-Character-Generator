@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { submitForm as sf } from "../actions";
+import { submitForm as sf, submitPlayer } from "../actions";
 import { connect } from "react-redux";
+// import Footer from './components/Footer';
+
 // Encounter Level - number input
 // Number of Monsters - number input
 // Type selector - select multiple as well
@@ -124,6 +126,7 @@ class CreatureForm extends Component {
         this.state.player.level
       }, Initiative: ${this.state.player.initiative}`
     );
+    this.props.submitPlayer(this.state.player);
   };
 
   render() {
@@ -256,7 +259,7 @@ class CreatureForm extends Component {
 const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = {
-  sf
+  sf, submitPlayer
 };
 
 export default connect(
