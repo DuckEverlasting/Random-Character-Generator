@@ -24,7 +24,14 @@ class MonsterToken extends React.Component {
       return null;
     }
     return (
-      <CreatureToken onClick={this.selectMonster}>
+      <CreatureToken
+        onClick={this.selectMonster}
+        style={{
+          backgroundColor:
+            this.props.monster.is_Alive === false ? "#E1644A" : "white"
+        }}
+        alive={this.props.monster.is_Alive}
+      >
         <MonsterInfo>
           <NameHolder>
             <Typography>{this.props.monster.name}</Typography>
@@ -107,7 +114,7 @@ const NameHolder = styled.div`
 
 const CreatureToken = styled(Card)({
   width: "115px",
-  height: "150px",
+  height: props => (props.alive === false ? "45px" : "150px"),
   padding: "1%",
   textAlign: "center",
   margin: "2px",

@@ -29,6 +29,8 @@ select {
 .App {
   display: flex;
   flex-direction: row;
+  max-width: 1800px;
+  max-height: 2500px;
 }
 
 footer a {
