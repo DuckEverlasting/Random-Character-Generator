@@ -100,7 +100,10 @@ class Battlefield extends React.Component {
                 : `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
-          <Field monsters={this.state.list} />
+          {this.state.list.filter(monster => monster.is_Alive === true).length >
+          0 ? (
+            <Field monsters={this.state.list} />
+          ) : null}
         </FieldBox>
         {this.state.list.filter(monster => monster.is_Alive === false).length >
         0 ? (
