@@ -52,6 +52,7 @@ footer {
   font-weight: bold;
 }
 
+
 .about-body button:hover {
   background-color: black;
 }
@@ -125,10 +126,12 @@ main {
   margin-top: 3%;
 }
 
-.title {
+.about-title {
   font-family: "MedievalSharp", cursive;
   font-size: 2rem;
   display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 form {
