@@ -49,7 +49,7 @@ function MonsterViewer() {
                     <section>
                         Speed
                         <ul>
-                            { Object.keys(monster.speed).map(key=>(
+                            { Object.keys(monster.speed).filter(key=>monster.speed[key]!==null).map(key=>(
                                 <li>
                                     {key}: {monster.speed[key]} ft ({monster.speed[key]/5} Squares)
                                 </li>

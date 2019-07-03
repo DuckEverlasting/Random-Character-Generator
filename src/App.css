@@ -29,10 +29,10 @@ select {
 .App {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
+  margin: 0;
   overflow: hidden;
-  max-width: 1800px;
-  max-height: 2500px;
+  width: 100vw;
+  height: 95vh;
 }
 
 footer a {

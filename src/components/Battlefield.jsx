@@ -150,8 +150,7 @@ position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 70%;
-  max-width: 1260px;
+  width: 100%;
   z-index: 1;
 `;
 
@@ -164,7 +163,7 @@ const FieldBox = styled.div`
   height: 100%;
   overflow-y: auto;
   background-repeat: no-repeat;
-  background-positon: center;
+  /* background-positon: center; */
 `;
 
 const ShadowRealmBox = styled.div`

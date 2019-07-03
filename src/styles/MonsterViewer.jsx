@@ -46,9 +46,10 @@ export const Special=styled.dl`
 `
 export const Bottom=styled.section`
     display:flex;
+    height:60vh;
+    border-top:1px solid black;
     &>section{
         width:50%;
-        border:1px solid black;
     }
     fieldset{
         border-color:transparent;
@@ -56,8 +57,10 @@ export const Bottom=styled.section`
 `
 
 export const MonsterView=styled.section`
+    padding-left:.5rem;
     overflow:hidden;
-    border:1px solid black;
-    width:510px;
-    height:600px;
+    width:30%;
+    height:100vh;
+    background-color:white;
+    font-family: "Roboto", sans-serif;
 `

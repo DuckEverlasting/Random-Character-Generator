@@ -9,7 +9,9 @@ function SectionView(props) {
 
     return (
         <SectionCards>
-            <button onClick={()=>setDisplay('std')}>Actions</button><button onClick={()=>setDisplay('legend')}>Legendary Actions</button>
+            <section className="buttons">
+                <button onClick={()=>setDisplay('std')}>Actions</button><button onClick={()=>setDisplay('legend')}>Legendary Actions</button>
+            </section>
             <section className={cn({hide:true,show:display==='std'})}>
                 <Special>
                     {props.actions.map(action=>(
