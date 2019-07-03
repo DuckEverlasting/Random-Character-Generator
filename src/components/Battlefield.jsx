@@ -59,6 +59,8 @@ class Battlefield extends React.Component {
   };
 
   render() {
+    console.log(this.state.list);
+    console.log(this.props.terrain);
     if (this.props.formPending === true) {
       return <div>Loading...</div>;
     }
@@ -75,7 +77,10 @@ class Battlefield extends React.Component {
 
         <FieldBox
           style={{
-            backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
+            backgroundImage:
+              this.props.terrain === "any"
+                ? `url(/assets/grasslands.jpg)`
+                : `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
           <Field monsters={this.state.list} />
@@ -99,6 +104,7 @@ const ButtonBox = styled.div`
   justify-content: space-around;
   height: 5%;
   width: 100%;
+  background-color: #202020;
 `;
 
 const Battlegrounds = styled.div`

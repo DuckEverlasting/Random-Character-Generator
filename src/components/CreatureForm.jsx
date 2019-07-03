@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {submitForm as sf} from '../actions'
-import {connect} from 'react-redux'
+import React, { Component } from "react";
+import { submitForm as sf } from "../actions";
+import { connect } from "react-redux";
 // Encounter Level - number input
 // Number of Monsters - number input
 // Type selector - select multiple as well
@@ -8,27 +8,62 @@ import {connect} from 'react-redux'
 // alignment selector - select multiple
 
 class CreatureForm extends Component {
-    constructor() {
-        super();
-        this.state = {
-            info: {
-                encounterLevel: 0,
-                numberEncounter: 0,
-                type: [],
-                terrain: "x",
-                alignment: []
-            },
-            player: {
-                name: "",
-                level: 0,
-                initiative: 0
-            }
-        }
+  constructor() {
+    super();
+    this.state = {
+      info: {
+        encounterLevel: 0,
+        numberEncounter: 0,
+        type: [],
+        terrain: "x",
+        alignment: []
+      },
+      player: {
+        name: "",
+        level: 0,
+        initiative: 0
+      }
+    };
+  }
+
+  onSubmitHandler = event => {
+    event.preventDefault();
+    this.props.sf({ ...this.state.info });
+  };
+
+  onChangeHandler = event => {
+    this.setState({
+      info: {
+        ...this.state.info,
+        [event.target.name]: event.target.value
+      }
+    });
+  };
+
+  handleAlignment = event => {
+    var options = event.target.options;
+    var alignment = [];
+    for (var i = 0, l = options.length; i < l; i++) {
+      if (options[i].selected) {
+        alignment.push(options[i].value);
+      }
     }
 
-    onSubmitHandler = event => {
-        event.preventDefault();
-        this.props.sf({...this.state.info})
+    this.setState({
+      info: {
+        ...this.state.info,
+        alignment: alignment
+      }
+    });
+  };
+
+  handleType = event => {
+    var options = event.target.options;
+    var type = [];
+    for (var i = 0, l = options.length; i < l; i++) {
+      if (options[i].selected) {
+        type.push(options[i].value);
+      }
     }
 
     onChangeHandler = event => {
@@ -223,15 +258,16 @@ class CreatureForm extends Component {
             </div>
         );
     }
+
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    
-})
-
+const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = {
-    sf
-}
+  sf
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreatureForm)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CreatureForm);
