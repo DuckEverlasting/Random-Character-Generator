@@ -15,7 +15,7 @@ class CreatureForm extends Component {
         encounterLevel: 0,
         numberEncounter: 0,
         type: [],
-        terrain: "x",
+        terrain: "any",
         alignment: []
       },
       player: {
@@ -161,7 +161,7 @@ class CreatureForm extends Component {
             value={this.state.info.type}
             onChange={this.handleType}
           >
-            <option value="any" selected>Any/All</option>
+            <option value="any" defaultValue>Any/All</option>
             <option value="aberration">Aberration</option>
             <option value="beast">Beast</option>
             <option value="celestial">Celestial</option>
