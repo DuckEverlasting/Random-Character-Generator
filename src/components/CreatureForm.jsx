@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { submitForm as sf, submitPlayer } from "../actions";
+import { submitForm as sf, submitPlayer as sp } from "../actions";
 import { connect } from "react-redux";
 // import Footer from './components/Footer';
 
@@ -121,12 +121,15 @@ class CreatureForm extends Component {
 
   addPlayer = event => {
     event.preventDefault();
-    console.log(
-      `AddPlayer: Player: ${this.state.player.name}, Level: ${
-        this.state.player.level
-      }, Initiative: ${this.state.player.initiative}`
-    );
-    this.props.submitPlayer(this.state.player);
+    // console.log(
+    //   `AddPlayer: Player: ${this.state.player.name}, Level: ${
+    //     this.state.player.level
+    //   }, Initiative: ${this.state.player.initiative}`
+    // );
+    this.props.sp({
+      ...this.state.player,
+      is_Alive:true
+    })
   };
 
   render() {
@@ -259,7 +262,7 @@ class CreatureForm extends Component {
 const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = {
-  sf, submitPlayer
+  sf, sp
 };
 
 export default connect(

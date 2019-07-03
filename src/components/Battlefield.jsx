@@ -69,19 +69,10 @@ class Battlefield extends React.Component {
   };
 
   render() {
-    // if (!this.props.terrain || this.props.formPending === true) {
-    //   return (
-    //     <LoadingScreen>
-    //       <LoadingBox>
-    //         <CircularProgressSC visible={this.props.formPending} color="primary" />
-    //         <p>Generating Encounter...</p>
-    //       </LoadingBox>
-    //     </LoadingScreen>
-    //   );
-    // }
     return (
       <Battlegrounds>
-        <LoadingScreen visible={!this.props.terrain || this.props.formPending === true}>
+        <LoadingScreen visible={(!this.props.monsters.length && !this.props.players.length) || this.props.formPending === true}>
+          <Title visible={(!this.props.monsters.length && !this.props.players.length)}>5e Encounter Generator</Title>
           <LoadingBox>
             <CircularProgressSC visible={this.props.formPending} size={154} thickness={1} color="white" />
             <LoadingImg src="/assets/red-dragon-2.png" />
@@ -104,10 +95,7 @@ class Battlefield extends React.Component {
 
         <FieldBox
           style={{
-            backgroundImage:
-              !this.props.terrain
-                ? `url(/assets/grassland.jpg)`
-                : `url(/assets/${this.props.terrain}.jpg)`
+            backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
           {this.state.list.filter(monster => monster.is_Alive === true).length >
@@ -128,12 +116,17 @@ class Battlefield extends React.Component {
 
 const InitiativeButton = styled(Button)({
   backgroundColor: "#cf291d !important",
-  width: "25%"
+  fontSize: "12px !important",
+  color: "white !important",
+  fontWeight: "bold !important",
+  width: "15%"
 });
 
 const EndButton = styled(Button)({
   backgroundColor: "#bfbfbf !important",
-  width: "25%"
+  fontSize: "12px !important",
+  fontWeight: "bold !important",
+  width: "15%"
 });
 
 const ButtonBox = styled.div`
@@ -216,6 +209,14 @@ const CircularProgressSC = styled(CircularProgress)`
 const LoadingImg = styled.img`
   width: 10%;
   
+`
+
+const Title = styled.h1`
+  font: 54px "MedievalSharp", cursive;
+  text-align: center;
+  opacity: ${props => props.visible ? "1" : "0"};
+  transition: opacity .1s;
+  transition-delay: .5s;
 `
 
 //redux

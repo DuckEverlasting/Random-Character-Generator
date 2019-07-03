@@ -52,6 +52,7 @@ footer {
   font-weight: bold;
 }
 
+
 .about-body button:hover {
   background-color: black;
 }
@@ -116,18 +117,24 @@ main {
   color: white;
   font-family: "Roboto", sans-serif;
   width: 30%;
-  height: 100vh;
   min-width: 20rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3%;
 }
 
-.title {
+.form-container h1 {
+  font-family: "MedievalSharp", cursive;
+}
+
+.about-title {
   font-family: "MedievalSharp", cursive;
   font-size: 2rem;
   display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 form {
@@ -161,8 +168,8 @@ form button {
   font-weight: bold;
   width: 15rem;
   text-align: center;
-  margin: 0.5rem auto;
-  padding: 0.5rem;
+  margin: 0.25rem auto;
+  padding: 0.25rem;
 }
 form button:hover {
   background-color: black;

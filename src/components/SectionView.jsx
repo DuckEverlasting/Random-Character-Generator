@@ -4,7 +4,6 @@ import cn from '../utils/ClassReducer'
 import {Special} from '../styles/MonsterViewer'
 
 function SectionView(props) {
-    console.log(props);
     const [display,setDisplay]=useState('std')
 
     return (
