@@ -5,9 +5,8 @@ export default function Footer() {
         <>
             <footer>
                    <div> <a href='about.html' target='_blank'>About Us</a></div>
-                   <div> © 2019 Random Monster Generator</div>
+                   <div> © 2019 5e Encounter Generator</div>
             </footer>
         </>
     );
 }
-
