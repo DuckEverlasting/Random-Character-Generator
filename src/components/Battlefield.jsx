@@ -69,16 +69,6 @@ class Battlefield extends React.Component {
   };
 
   render() {
-    // if (!this.props.terrain || this.props.formPending === true) {
-    //   return (
-    //     <LoadingScreen>
-    //       <LoadingBox>
-    //         <CircularProgressSC visible={this.props.formPending} color="primary" />
-    //         <p>Generating Encounter...</p>
-    //       </LoadingBox>
-    //     </LoadingScreen>
-    //   );
-    // }
     return (
       <Battlegrounds>
         <LoadingScreen visible={!this.props.terrain || this.props.formPending === true}>
@@ -104,10 +94,7 @@ class Battlefield extends React.Component {
 
         <FieldBox
           style={{
-            backgroundImage:
-              !this.props.terrain
-                ? `url(/assets/grassland.jpg)`
-                : `url(/assets/${this.props.terrain}.jpg)`
+            backgroundImage: `url(/assets/${this.props.terrain}.jpg)`
           }}
         >
           {this.state.list.filter(monster => monster.is_Alive === true).length >
@@ -128,12 +115,17 @@ class Battlefield extends React.Component {
 
 const InitiativeButton = styled(Button)({
   backgroundColor: "#cf291d !important",
-  width: "25%"
+  fontSize: "12px !important",
+  color: "white !important",
+  fontWeight: "bold !important",
+  width: "15%"
 });
 
 const EndButton = styled(Button)({
   backgroundColor: "#bfbfbf !important",
-  width: "25%"
+  fontSize: "12px !important",
+  fontWeight: "bold !important",
+  width: "15%"
 });
 
 const ButtonBox = styled.div`

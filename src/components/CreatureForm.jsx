@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { submitForm as sf } from "../actions";
+import { submitForm as sf, submitPlayer as sp } from "../actions";
 import { connect } from "react-redux";
 // Encounter Level - number input
 // Number of Monsters - number input
@@ -119,11 +119,12 @@ class CreatureForm extends Component {
 
   addPlayer = event => {
     event.preventDefault();
-    console.log(
-      `AddPlayer: Player: ${this.state.player.name}, Level: ${
-        this.state.player.level
-      }, Initiative: ${this.state.player.initiative}`
-    );
+    // console.log(
+    //   `AddPlayer: Player: ${this.state.player.name}, Level: ${
+    //     this.state.player.level
+    //   }, Initiative: ${this.state.player.initiative}`
+    // );
+    this.props.sp()
   };
 
   render() {
@@ -256,7 +257,7 @@ class CreatureForm extends Component {
 const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = {
-  sf
+  sf, sp
 };
 
 export default connect(
