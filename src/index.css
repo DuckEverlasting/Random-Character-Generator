@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   background: #202020;
+  color: inherit;
 }
 
 html {
@@ -108,13 +109,14 @@ main {
   padding: 1rem;
 }
 
-.link-to-site {
-  color: white;
+.link-to-site p {
+  color: white !important;
   text-decoration: none;
 }
-.link-to-site:hover {
+.link-to-site p:hover {
   color: #CF291D;
 }
+
 
 .about-footer {
   text-align: center;
