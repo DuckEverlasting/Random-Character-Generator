@@ -124,7 +124,10 @@ class CreatureForm extends Component {
     //     this.state.player.level
     //   }, Initiative: ${this.state.player.initiative}`
     // );
-    this.props.sp()
+    this.props.sp({
+      ...this.state.player,
+      is_Alive:true
+    })
   };
 
   render() {

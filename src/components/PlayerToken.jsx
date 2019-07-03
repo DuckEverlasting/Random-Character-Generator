@@ -15,13 +15,11 @@ class PlayerToken extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.toggleMonsterDeath(this.props.monster.id);
-    console.log("dead");
   };
 
   selectMonster = e => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("selected");
     this.props.selectCreature(this.props.monster);
   };
 
@@ -29,6 +27,7 @@ class PlayerToken extends React.Component {
     if (!this.props.monster) {
       return null;
     }
+
     return (
       <CreatureToken onClick={this.selectMonster}>
         <MonsterInfo>

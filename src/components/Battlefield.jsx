@@ -37,6 +37,7 @@ class Battlefield extends React.Component {
       temp = temp.sort((a, b) => {
         return b.initiative - a.initiative;
       });
+
       this.setState(
         {
           list: temp
