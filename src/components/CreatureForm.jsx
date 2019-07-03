@@ -199,6 +199,8 @@ class CreatureForm extends Component {
             <option value="urban">Urban</option>
           </select>
 
+
+          <h3>Alignment</h3>
           <select
             multiple={true}
             value={this.state.info.alignment}
