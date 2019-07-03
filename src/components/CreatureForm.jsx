@@ -181,7 +181,6 @@ class CreatureForm extends Component {
           <h3>Environment</h3>
           <select
             name="terrain"
-            placeholder="x"
             value={this.state.info.terrain}
             onChange={this.onChangeHandler}
           >
