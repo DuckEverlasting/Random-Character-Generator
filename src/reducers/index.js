@@ -58,8 +58,8 @@ const rootReducer = (state = initialState, action) => {
         players: [
           ...state.players,
           action.payload,
-          formUpdated:true
-        ]
+        ],
+        formUpdated:true
       };
     case TOGGLE_MONSTER_DEATH:
       return {
