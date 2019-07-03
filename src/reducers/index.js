@@ -58,7 +58,8 @@ const rootReducer = (state = initialState, action) => {
         players: [
           ...state.players,
           action.payload
-        ]
+        ],
+        formUpdated:true
       };
     case TOGGLE_MONSTER_DEATH:
       return {
@@ -88,7 +89,8 @@ const rootReducer = (state = initialState, action) => {
     case END_ENCOUNTER:
       return {
         ...state,
-        selected: undefined
+        selected: undefined,
+        terrain:""
       };
     default:
       return state;

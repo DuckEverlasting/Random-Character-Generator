@@ -1,5 +1,11 @@
 import React from "react";
-import { Card, CardContent, Typography, IconButton } from "@material-ui/core";
+import {
+  Card,
+  CardContent,
+  Typography,
+  IconButton,
+  CardActionArea
+} from "@material-ui/core";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { toggleMonsterDeath, selectCreature } from "../actions";
@@ -27,7 +33,7 @@ class PlayerToken extends React.Component {
       <CreatureToken onClick={this.selectMonster}>
         <MonsterInfo>
           <NameHolder>
-            <Typography>{this.props.monster.name}</Typography>
+            <Name>{this.props.monster.name}</Name>
             <IconButton onClick={this.monsterDeath}>
               {this.props.monster.is_Alive === true ? (
                 <i className="fas fa-skull-crossbones" />
@@ -57,14 +63,21 @@ const NameHolder = styled.div`
 
 const CreatureToken = styled(Card)({
   width: "115px",
-  height: "150px",
+  height: props => (props.alive === false ? "48px" : "160px"),
   padding: "1%",
   textAlign: "center",
   margin: "2px",
-  border: "1px solid black"
+  border: "2px solid #cf291d",
+  borderRadius: "10px"
 });
 
-const MonsterInfo = styled(CardContent)({
+const Name = styled(Typography)({
+  lineHeight: "1 !important",
+  fontWeight: "bold !important",
+  fontSize: "1.3rem !important"
+});
+
+const MonsterInfo = styled(CardActionArea)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",

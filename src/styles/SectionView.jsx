@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const SectionCards=styled.section`
     overflow:auto;
     word-wrap:break-word;
-    height:350px;
-    button{
-        border-bottom-color:transparent;
+    section.buttons{
+        display:flex;
+        justify-content:space-between;
     }
     .hide{
         display:none;
@@ -21,6 +21,6 @@ export const ActionSection=styled.section`
         padding-right:1rem;
     }
     dd{
-        margin-left:.35rem;
+        margin-left:.5rem;
     }
 `

@@ -50,9 +50,8 @@ export default function (encounterLevel, numberEncounter, filteredByAlignment) {
     if(tempSmall.length<1){
       tempSmall=filteredByAlignment.filter(creature=>isNaN(creature.challenge_rating) || creature.challenge_rating===1)
     }
-
     let pickedCreature=tempSmall[
-      Math.floor(Math.random()*tempSmall.length+1)
+      Math.floor(Math.random()*tempSmall.length)
     ]
 
     temp.push(pickedCreature)

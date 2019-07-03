@@ -39,11 +39,9 @@ export const submitForm = data => async dispatch => {
 
   list=list.map(monster=>convertToJson(monster))
 
-  const filteredByType = list.filter(monster => type===[] || type.includes("any") || type.includes(monster.type))
+  const filteredByType = list.filter(monster => (type.length<1 || type.includes("any") || type.includes(monster.type) ))
   
-  console.log(filteredByType);
-
-  const filteredByAlignment = filteredByType.filter(monster => alignment.includes('any') || alignment.includes(monster.alignment))
+  const filteredByAlignment = filteredByType.filter(monster => (alignment.length<1 || alignment.includes('any') || alignment.includes(monster.alignment) ))
 
   const finalData = buildEncounter(encounterLevel, numberEncounter, filteredByAlignment)
 

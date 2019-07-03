@@ -1,5 +1,11 @@
 import React from "react";
-import { Card, CardContent, Typography, IconButton } from "@material-ui/core";
+import {
+  Card,
+  CardContent,
+  Typography,
+  IconButton,
+  CardActionArea
+} from "@material-ui/core";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { toggleMonsterDeath, selectCreature } from "../actions";
@@ -34,10 +40,10 @@ class MonsterToken extends React.Component {
       >
         <MonsterInfo>
           <NameHolder>
-            <Typography>{this.props.monster.name}</Typography>
+            <Name>{this.props.monster.name}</Name>
             <IconButton onClick={this.monsterDeath}>
               {this.props.monster.is_Alive === true ? (
-                <i className="fas fa-skull-crossbones" />
+                <i className="fas fa-skull-crossbones fa-sm" />
               ) : (
                 <i className="fas fa-undo" />
               )}
@@ -112,16 +118,22 @@ const NameHolder = styled.div`
   justify-content: space-between;
 `;
 
+const Name = styled(Typography)({
+  lineHeight: "1 !important",
+  fontWeight: "bold !important",
+  fontSize: "1.3rem !important"
+});
+
 const CreatureToken = styled(Card)({
   width: "115px",
-  height: props => (props.alive === false ? "45px" : "150px"),
+  height: props => (props.alive === false ? "46px" : "160px"),
   padding: "1%",
   textAlign: "center",
   margin: "2px",
   border: "2px solid #cf291d"
 });
 
-const MonsterInfo = styled(CardContent)({
+const MonsterInfo = styled(CardActionArea)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -133,7 +145,7 @@ const StatHolder = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 100%;
+  width: 115px;
 `;
 
 const NumberStat = styled.div`
