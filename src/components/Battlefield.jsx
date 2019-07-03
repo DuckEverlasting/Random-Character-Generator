@@ -6,6 +6,10 @@ import ShadowRealm from "./ShadowRealm";
 import { dataRecieved } from "../actions";
 import Button from "@material-ui/core/Button";
 
+// const LoadingScreen = styled.div`
+//   background: #202020;
+// `
+
 class Battlefield extends React.Component {
   state = {
     terrain: "Grasslands",
