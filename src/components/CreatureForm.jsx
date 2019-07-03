@@ -185,9 +185,6 @@ class CreatureForm extends Component {
             value={this.state.info.terrain}
             onChange={this.onChangeHandler}
           >
-            <option value="x" hidden>
-              Terrain
-            </option>
             <option value="any">Any/All</option>
             <option value="arctic">Arctic</option>
             <option value="coastal">Coastal</option>
