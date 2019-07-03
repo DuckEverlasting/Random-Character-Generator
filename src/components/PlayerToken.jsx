@@ -29,7 +29,7 @@ class PlayerToken extends React.Component {
     }
 
     return (
-      <CreatureToken onClick={this.selectMonster}>
+      <CreatureToken>
         <MonsterInfo>
           <NameHolder>
             <Name>{this.props.monster.name}</Name>
