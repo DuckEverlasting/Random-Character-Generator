@@ -103,7 +103,7 @@ const NumberStat = styled.div`
 //redux
 const mapStateToProps = state => {
   return {
-    monsters: state.moonsters,
+    monsters: state.monsters,
     players: state.players
   };
 };
