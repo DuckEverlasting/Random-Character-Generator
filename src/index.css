@@ -126,6 +126,10 @@ main {
   margin-top: 3%;
 }
 
+.form-container h1 {
+  font-family: "MedievalSharp", cursive;
+}
+
 .about-title {
   font-family: "MedievalSharp", cursive;
   font-size: 2rem;
