@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Field from "./Field";
 import ShadowRealm from "./ShadowRealm";
-import { dataRecieved } from "../actions";
+import { dataRecieved, endEncounter } from "../actions";
 import Button from "@material-ui/core/Button";
 
 class Battlefield extends React.Component {
@@ -73,6 +73,12 @@ class Battlefield extends React.Component {
           <InitiativeButton variant="contained" onClick={this.next}>
             Next
           </InitiativeButton>
+          <EndButton
+            variant="contained"
+            onClick={() => this.props.endEncounter()}
+          >
+            End Encounter
+          </EndButton>
         </ButtonBox>
 
         <FieldBox
@@ -95,6 +101,11 @@ class Battlefield extends React.Component {
 
 const InitiativeButton = styled(Button)({
   backgroundColor: "#cf291d !important",
+  width: "25%"
+});
+
+const EndButton = styled(Button)({
+  backgroundColor: "#bfbfbf !important",
   width: "25%"
 });
 
@@ -156,7 +167,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  dataRecieved
+  dataRecieved,
+  endEncounter
 };
 
 export default connect(
