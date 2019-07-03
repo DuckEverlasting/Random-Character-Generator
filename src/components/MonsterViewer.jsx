@@ -1,16 +1,13 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import {FaShieldAlt} from 'react-icons/fa'
-import dummy from '../utils/dummyData'
 import {AC, Important,Special, Bottom,MonsterView} from '../styles/MonsterViewer'
 import { IconContext } from 'react-icons';
 import SectionView from './SectionView'
 
 function MonsterViewer() {
 
-    //const monster=useSelector(state=>state.selected)
-    const monster = dummy;
-
+    const monster=useSelector(state=>state.selected)
     if(monster){
         return (
             <MonsterView>

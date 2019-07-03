@@ -69,7 +69,6 @@ class Battlefield extends React.Component {
   };
 
   render() {
-    console.log(this.state.list);
     // if (!this.props.terrain || this.props.formPending === true) {
     //   return (
     //     <LoadingScreen>
