@@ -9,7 +9,7 @@ class MonsterToken extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.toggleMonsterDeath(this.props.monster.id);
-    console.log("dead");
+    console.log(this.props.monster.id);
   };
 
   selectMonster = e => {
