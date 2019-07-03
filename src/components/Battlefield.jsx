@@ -130,6 +130,7 @@ const Battlegrounds = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 70%;
+  max-width: 1080px;
 `;
 
 const FieldBox = styled.div`
