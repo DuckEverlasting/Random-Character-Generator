@@ -71,7 +71,8 @@ class Battlefield extends React.Component {
   render() {
     return (
       <Battlegrounds>
-        <LoadingScreen visible={!this.props.terrain || this.props.formPending === true}>
+        <LoadingScreen visible={(!this.props.monsters.length && !this.props.players.length) || this.props.formPending === true}>
+          <Title visible={(!this.props.monsters.length && !this.props.players.length)}>5e Encounter Generator</Title>
           <LoadingBox>
             <CircularProgressSC visible={this.props.formPending} size={154} thickness={1} color="white" />
             <LoadingImg src="/assets/red-dragon-2.png" />
@@ -208,6 +209,13 @@ const CircularProgressSC = styled(CircularProgress)`
 const LoadingImg = styled.img`
   width: 10%;
   
+`
+
+const Title = styled.h1`
+  font: 54px "MedievalSharp", cursive;
+  opacity: ${props => props.visible ? "1" : "0"};
+  transition: opacity .1s;
+  transition-delay: .5s;
 `
 
 //redux
