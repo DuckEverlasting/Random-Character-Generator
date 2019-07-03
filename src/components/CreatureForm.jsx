@@ -185,9 +185,6 @@ class CreatureForm extends Component {
             value={this.state.info.terrain}
             onChange={this.onChangeHandler}
           >
-            <option value="x" hidden>
-              Terrain
-            </option>
             <option value="any">Any/All</option>
             <option value="arctic">Arctic</option>
             <option value="coastal">Coastal</option>
@@ -202,6 +199,8 @@ class CreatureForm extends Component {
             <option value="urban">Urban</option>
           </select>
 
+
+          <h3>Alignment</h3>
           <select
             multiple={true}
             value={this.state.info.alignment}
@@ -240,7 +239,7 @@ class CreatureForm extends Component {
             value={this.state.player.level}
             onChange={this.onChangePlayer}
           />
-          Initiative Modifier:
+          Initiative:
           <input
             type="number"
             min="1"

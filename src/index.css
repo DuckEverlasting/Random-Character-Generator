@@ -60,6 +60,7 @@ footer {
   width: 25%;
   border: 1px solid orange;
 }
+
 /*
 main {
   height: 93%;
@@ -144,6 +145,7 @@ form select {
   margin-top: 0.25rem;
   width: 15rem;
 }
+
 form select option {
   background-color: #303030;
   color: white;
@@ -166,9 +168,11 @@ form button {
   margin: 0.5rem auto;
   padding: 0.5rem;
 }
+
 form button:hover {
   background-color: black;
 }
+
 /*
 dragon-red: #CF291D
 cement: #ECECEC

@@ -18,6 +18,7 @@ const initialState = {
   monsters: [],
   players: [],
   selected: undefined,
+  creatureDead:undefined
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -48,7 +49,8 @@ const rootReducer = (state = initialState, action) => {
     case DATA_RECIEVED:
       return {
         ...state,
-        formUpdated: false
+        formUpdated: false,
+        creatureDead:undefined
       };
     case SUBMIT_PLAYER:
       return {
@@ -59,18 +61,9 @@ const rootReducer = (state = initialState, action) => {
         ]
       };
     case TOGGLE_MONSTER_DEATH:
-      const newMonsters = [
-        state.monsters.map(monster => {
-          if (monster.id === action.payload) {
-            return { ...monster, isAlive: false };
-          } else {
-            return monster;
-          }
-        })
-      ];
       return {
         ...state,
-        monsters: newMonsters
+        creatureDead:action.payload
       };
     case TOGGLE_PLAYER_DEATH:
       const newPlayers = [

@@ -41,6 +41,13 @@ class Battlefield extends React.Component {
         },
         this.props.dataRecieved
       );
+    }else if(this.props.creatureDead!==undefined){
+      this.props.dataRecieved()
+      this.setState((prevState) => ({ 
+          ...prevState,
+          list:prevState.list
+                .map(i=>i.id===this.props.creatureDead?{...i,is_Alive:!i.is_Alive}:i)
+       }))
     }
   }
 
@@ -59,8 +66,6 @@ class Battlefield extends React.Component {
   };
 
   render() {
-    console.log(this.state.list);
-    console.log(this.props.terrain);
     if (this.props.formPending === true) {
       return <div>Loading...</div>;
     }
@@ -161,7 +166,8 @@ const mapStateToProps = state => {
     formPending: state.formPending,
     formError: state.formError,
     formUpdated: state.formUpdated,
-    terrain: state.terrain
+    terrain: state.terrain,
+    creatureDead:state.creatureDead
   };
 };
 
