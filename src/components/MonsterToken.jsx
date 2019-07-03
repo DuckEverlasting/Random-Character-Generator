@@ -126,7 +126,7 @@ const Name = styled(Typography)({
 
 const CreatureToken = styled(Card)({
   width: "115px",
-  height: props => (props.alive === false ? "48px" : "160px"),
+  height: props => (props.alive === false ? "46px" : "160px"),
   padding: "1%",
   textAlign: "center",
   margin: "2px",
