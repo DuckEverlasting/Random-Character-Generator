@@ -146,11 +146,10 @@ const ShadowRealmBox = styled.div`
   flex-direction: row;
   align-items: safe center;
   overflow-x: auto;
-  background: url(https://cdn.pixabay.com/photo/2018/01/30/13/08/old-3118750_1280.jpg);
+  background: #202020;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 0.6;
   width: 100%;
 `;
 
