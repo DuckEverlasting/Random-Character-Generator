@@ -213,6 +213,7 @@ const LoadingImg = styled.img`
 
 const Title = styled.h1`
   font: 54px "MedievalSharp", cursive;
+  text-align: center;
   opacity: ${props => props.visible ? "1" : "0"};
   transition: opacity .1s;
   transition-delay: .5s;
