@@ -113,32 +113,37 @@ main {
 .form-container {
   background-color: #202020;
   color: white;
-  font-family: "Roboto", sans-serif;
-  width: 30%;
-  text-align: center;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  width: 25rem;
   max-height: 100vh;
   min-width: 20rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center
+
 }
 
-.form-container h1 {
+.title {
   font-family: "MedievalSharp", cursive;
-}
-
-.form-wrapper {
-  text-align: center;
+  font-size: 2rem;
+  display: flex;
 }
 
 form {
-  display: inline-block;
+  margin: 0px;
+  padding: 0px;
 }
+
+
+
 form select {
   background-color: #303030;
   color: white;
-  margin: 0.25rem;
+  margin-top: 0.25rem;
   width: 15rem;
 }
 form select option {
@@ -146,10 +151,7 @@ form select option {
   color: white;
   width: 15rem;
 }
-.form-container form {
-  text-align: center;
-  width: 15rem;
-}
+
 
 form input {
   background-color: #303030;
@@ -164,7 +166,7 @@ form button {
   font-weight: bold;
   width: 15rem;
   text-align: center;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   padding: 0.5rem;
 }
 form button:hover {
