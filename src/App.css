@@ -29,4 +29,5 @@ select {
 .App {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }

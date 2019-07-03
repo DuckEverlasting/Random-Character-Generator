@@ -5,10 +5,8 @@ import Field from "./Field";
 import ShadowRealm from "./ShadowRealm";
 import { dataRecieved, endEncounter } from "../actions";
 import Button from "@material-ui/core/Button";
-
-// const LoadingScreen = styled.div`
-//   background: #202020;
-// `
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class Battlefield extends React.Component {
   state = {
@@ -72,11 +70,24 @@ class Battlefield extends React.Component {
 
   render() {
     console.log(this.state.list);
-    if (this.props.formPending === true) {
-      return <div>Loading...</div>;
-    }
+    // if (!this.props.terrain || this.props.formPending === true) {
+    //   return (
+    //     <LoadingScreen>
+    //       <LoadingBox>
+    //         <CircularProgressSC visible={this.props.formPending} color="primary" />
+    //         <p>Generating Encounter...</p>
+    //       </LoadingBox>
+    //     </LoadingScreen>
+    //   );
+    // }
     return (
       <Battlegrounds>
+        <LoadingScreen visible={!this.props.terrain || this.props.formPending === true}>
+          <LoadingBox>
+            <CircularProgressSC visible={this.props.formPending} size={154} thickness={1} color="white" />
+            <LoadingImg src="/assets/red-dragon-2.png" />
+          </LoadingBox>
+        </LoadingScreen>
         <ButtonBox>
           <InitiativeButton variant="contained" onClick={this.last}>
             Previous
@@ -95,7 +106,7 @@ class Battlefield extends React.Component {
         <FieldBox
           style={{
             backgroundImage:
-              !this.props.terrain || this.props.terrain === "x"
+              !this.props.terrain
                 ? `url(/assets/grassland.jpg)`
                 : `url(/assets/${this.props.terrain}.jpg)`
           }}
@@ -133,11 +144,13 @@ const ButtonBox = styled.div`
 `;
 
 const Battlegrounds = styled.div`
+position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 70%;
   max-width: 1080px;
+  z-index: 1;
 `;
 
 const FieldBox = styled.div`
@@ -164,6 +177,43 @@ const ShadowRealmBox = styled.div`
   background-position: center;
   width: 100%;
 `;
+
+const LoadingScreen = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10%;
+  background: #202020;
+  height: 100%;
+  width: 100%;
+  max-width: 1080px;
+  color: white;
+  font-size: 40px;
+  overflow: hidden;
+  opacity: ${props => props.visible ? "1" : "0"};
+  transition: opacity .2s;
+  z-index: 2;
+`;
+
+const LoadingBox = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CircularProgressSC = styled(CircularProgress)`
+  position: absolute;
+  opacity: ${props => props.visible ? "1" : "0"};
+  transition: opacity .1s;
+`
+
+const LoadingImg = styled.img`
+  width: 10%;
+`
 
 //redux
 const mapStateToProps = state => {
