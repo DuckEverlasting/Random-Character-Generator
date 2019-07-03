@@ -67,7 +67,8 @@ const CreatureToken = styled(Card)({
   padding: "1%",
   textAlign: "center",
   margin: "2px",
-  border: "2px solid #cf291d"
+  border: "2px solid #cf291d",
+  borderRadius: "10px"
 });
 
 const Name = styled(Typography)({
