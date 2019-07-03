@@ -98,9 +98,12 @@ class Battlefield extends React.Component {
         >
           <Field monsters={this.state.list} />
         </FieldBox>
-        <ShadowRealmBox>
-          <ShadowRealm monsters={this.state.list} />
-        </ShadowRealmBox>
+        {this.state.list.filter(monster => monster.is_Alive === false).length >
+        0 ? (
+          <ShadowRealmBox>
+            <ShadowRealm monsters={this.state.list} />
+          </ShadowRealmBox>
+        ) : null}
       </Battlegrounds>
     );
   }
@@ -139,14 +142,14 @@ const FieldBox = styled.div`
   flex-flow: wrap;
   align-items: center;
   justify-content: space-around;
-  height: 75%;
-  overflow-y: scroll;
+  height: 100%;
+  overflow-y: auto;
   background-repeat: no-repeat;
   background-positon: center;
 `;
 
 const ShadowRealmBox = styled.div`
-  height: 25%;
+  height: 30%;
   display: flex;
   flex-direction: row;
   align-items: safe center;
