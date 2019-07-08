@@ -1,70 +1,40 @@
-Application: https://5e-encounters.netlify.com/
+# 5e Encounter Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A toolkit to make dungeon masters' lives easier! This app will generate a random list of creatures for your group to battle. You can filter for specific types of creatures, specific environments, and specific challenge levels. 
 
-## Available Scripts
+Made specifically for the 5th edition of Dungeons and Dragons.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+Live here: https://5e-encounters.netlify.com/
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Built With
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [React](https://reactjs.org/) - The web framework used
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **Matt Klein** - *Initial work* - [DuckEverlasting](https://github.com/DuckEverlasting)
 
-### `npm run eject`
+* **Preston Middleton** - *Initial work* - [Garuda27](https://github.com/Garuda27)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* **Joscelyn Owen** - *Initial work* - [Joscelyn1](https://github.com/Joscelyn1)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Brandon Porter** - *Initial work* - [AshenPheonix](https://github.com/AshenPheonix)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Jarred Stanford** - *Initial work* - [JarredStanford](https://github.com/JarredStanford)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* **Nguyen Vo** - *Initial work* - [azinoVo](https://github.com/azinoVo)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Acknowledgments
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Lambda School for setting up the Hackathon Contest we created this app for
