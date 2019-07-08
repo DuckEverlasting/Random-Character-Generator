@@ -52,7 +52,15 @@ footer {
   font-weight: bold;
 }
 
+.social-media {
+  display: flex;
+  justify-content: flex-start;
+}
 
+.twitter {
+  height: 32px;
+  padding-left: 1rem;
+}
 .about-body button:hover {
   background-color: black;
 }
@@ -61,6 +69,10 @@ footer {
   height: 93%;
   width: 25%;
   border: 1px solid orange;
+}
+
+.about-us-footer:hover {
+  color: red;
 }
 /*
 main {
@@ -110,6 +122,18 @@ main {
 
 .img-container h4 {
   text-align: center;
+}
+
+.img-wrapper {
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+
+  width: 100%;
 }
 
 .form-container {

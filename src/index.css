@@ -116,15 +116,22 @@ main {
 .link-to-site p:hover {
   color: #CF291D;
 }
+.about-us-footer:hover {
+  color: #CF291D;
+}
+
 
 
 .about-footer {
   text-align: center;
+
 }
 
 .img-container h4 {
   text-align: center;
 }
+
+
 
 .form-container {
   background-color: #202020;
