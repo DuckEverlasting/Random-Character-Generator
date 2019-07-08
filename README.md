@@ -32,9 +32,6 @@ Live here: https://5e-encounters.netlify.com/
 
 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-
 ## Acknowledgments
 
-* Lambda School for setting up the Hackathon Contest we created this app for
+* Thank you to Lambda School for setting up the Hackathon Contest we created this app for
