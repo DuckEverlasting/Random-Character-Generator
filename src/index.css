@@ -116,7 +116,9 @@ main {
 .link-to-site p:hover {
   color: #CF291D;
 }
-
+.about-us-footer:hover {
+  color: #CF291D;
+}
 
 .about-footer {
   text-align: center;
