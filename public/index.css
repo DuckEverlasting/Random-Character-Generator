@@ -116,6 +116,18 @@ main {
   text-align: center;
 }
 
+.img-wrapper {
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+
+  width: 100%;
+}
+
 .form-container {
   background-color: #202020;
   color: white;
