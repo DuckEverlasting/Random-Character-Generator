@@ -120,6 +120,9 @@ main {
   color: #CF291D;
 }
 
+.main-footer {
+  left: 12%;
+}
 .about-footer {
   text-align: center;
 }
