@@ -5,7 +5,7 @@ export default function Footer() {
         <>
             <footer class="main-footer">
                    <div> <a class="about-us-footer" href='about.html' target='_blank'>About Us</a></div>
-                   <div> © 2019 Random Monster Generator</div>
+                   <div class="copyright"> © 2019 Random Monster Generator</div>
             </footer>
         </>
     );
