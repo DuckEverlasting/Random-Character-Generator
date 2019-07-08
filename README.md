@@ -18,17 +18,17 @@ Live here: https://5e-encounters.netlify.com/
 
 ## Authors
 
-* **Matt Klein** - *Initial work* - [DuckEverlasting](https://github.com/DuckEverlasting)
+* **Matt Klein** - [DuckEverlasting](https://github.com/DuckEverlasting)
 
-* **Preston Middleton** - *Initial work* - [Garuda27](https://github.com/Garuda27)
+* **Preston Middleton** - [Garuda27](https://github.com/Garuda27)
 
-* **Joscelyn Owen** - *Initial work* - [Joscelyn1](https://github.com/Joscelyn1)
+* **Joscelyn Owen** - [Joscelyn1](https://github.com/Joscelyn1)
 
-* **Brandon Porter** - *Initial work* - [AshenPheonix](https://github.com/AshenPheonix)
+* **Brandon Porter** - [AshenPheonix](https://github.com/AshenPheonix)
 
-* **Jarred Stanford** - *Initial work* - [JarredStanford](https://github.com/JarredStanford)
+* **Jarred Stanford** - [JarredStanford](https://github.com/JarredStanford)
 
-* **Nguyen Vo** - *Initial work* - [azinoVo](https://github.com/azinoVo)
+* **Nguyen Vo** - [azinoVo](https://github.com/azinoVo)
 
 
 
