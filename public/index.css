@@ -52,7 +52,15 @@ footer {
   font-weight: bold;
 }
 
+.social-media {
+  display: flex;
+  justify-content: flex-start;
+}
 
+.twitter {
+  height: 32px;
+  padding-left: 1rem;
+}
 .about-body button:hover {
   background-color: black;
 }
